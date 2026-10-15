@@ -1,0 +1,348 @@
+Estamos construyendo una PRESENTACIÓN WEB para una charla de Karla Rodríguez en USIL × Global Leaders Club.
+
+OBJETIVO
+Quiero una presentación web que se comporte como PowerPoint, no como una landing page ni como un informe con scroll. Debe servir para compartir pantalla durante una charla. Son EXACTAMENTE 15 diapositivas en formato 16:9.
+
+La web debe:
+1. Mostrar una sola diapositiva por vez, centrada, respetando proporción 16:9 y escalando al viewport.
+2. Navegar con flechas izquierda/derecha, teclas PageUp/PageDown, espacio y botones discretos.
+3. Tener modo fullscreen.
+4. Mostrar contador de slide muy discreto.
+5. Tener un menú mínimo con: “Presentar”, “Descargar PDF”, “Descargar PPTX”.
+6. Permitir exportar el estado ACTUAL de las 15 slides a PDF con html2canvas + jsPDF, una slide por página 16:9.
+7. El botón PPTX debe descargar el archivo estático ubicado en /public/downloads/Karla_USIL_Creator_Economy_15slides.pptx.
+8. También deja disponible el PDF estático base en /public/downloads/Karla_USIL_Creator_Economy_15slides.pdf, pero el botón principal de PDF debe exportar la versión actual de la web.
+9. En modo presentación, ocultar todos los controles salvo un hotspot o botón mínimo para salir.
+10. No debe haber scroll vertical entre slides.
+
+STACK
+- Vite + React + TypeScript.
+- CSS limpio o Tailwind si ya está configurado.
+- framer-motion solo para transiciones suaves.
+- lucide-react para iconos.
+- html2canvas + jspdf para exportar a PDF.
+- No usar Recharts: esta presentación no necesita dashboards.
+
+IMPORTANTE PARA ESTE EQUIPO
+Trabajamos en Windows PowerShell y se usa npm.cmd, nunca npm a secas si PowerShell intenta abrir npm.ps1.
+No cambies ExecutionPolicy.
+
+DIRECCIÓN VISUAL
+La referencia de organización es la presentación comercial de Wendy Wunder: diseño editorial, titulares grandes, una sola idea dominante por slide, bloques limpios, layouts divididos, tarjetas editoriales simples, uso de métricas grandes, slides de caso y cierre fuerte.
+NO copies su paleta ni su identidad. Traslada esa lógica al universo visual de Karla/Matiz.
+
+IDENTIDAD KARLA / MATIZ
+Paleta:
+- grape: #470B24
+- deep: #2A0615
+- wine: #3D1717
+- coral: #F47358
+- peri / celeste: #C4D3F7
+- olive: #857B4A
+- cream: #FFFAF5
+
+Tipografías web:
+- Titulares: Cormorant Garamond 300–600, incluyendo italic.
+- Texto funcional: Hanken Grotesk 400–700.
+Cargar ambas desde Google Fonts.
+
+Firma visual:
+- Titulares serif ligeros.
+- Una palabra o frase corta en italic como acento por titular.
+- En fondo claro: italic coral.
+- En fondo oscuro: italic celeste.
+- Mucho aire.
+- Evitar cards genéricas de SaaS, sombras fuertes, glow excesivo, iconografía innecesaria y look de dashboard.
+- Los fondos claros pueden ir de #FFFAF5 a un celeste extremadamente suave.
+- Fondos oscuros principalmente #470B24 / #2A0615.
+- Usar líneas finas coral o celeste y curvas/óvalos de trazo muy tenue como ornamento editorial.
+- No llenar slides con texto.
+- No convertir cada punto en tarjeta: usar tarjetas solo cuando aportan estructura.
+
+FOTOS
+Yo agregaré fotografías después. Por ahora crea componentes PhotoPlaceholder bien integrados, con bordes editoriales y proporciones claras, pero NO dejes cajas grises feas. Usa masas de color de marca y etiqueta interna pequeña “FOTO KARLA” o “FOTO CASO” para que luego pueda reemplazarlas.
+No cambies el layout cuando reemplace una foto.
+
+TRANSICIONES
+- Entrada suave 250–400 ms.
+- Nada de animaciones espectaculares.
+- Respeta prefers-reduced-motion.
+
+CONTENIDO EXACTO DE LAS 15 SLIDES
+
+SLIDE 1 — PORTADA
+Título:
+¿Puedo construir una carrera en la industria de creación de contenido?
+Subtítulo:
+¿Qué oportunidades profesionales existen detrás del contenido?
+Pie:
+Karla Rodríguez
+Directora Estratégica de Creadores de Contenido
+USIL × Global Leaders Club · 16 OCT 2026 · 4:00 PM
+Diseño: fondo oscuro, título grande a la izquierda, monograma KR o espacio de foto/identidad a la derecha.
+
+SLIDE 2 — KARLA
+Eyebrow: 01 · QUIÉN ESTÁ HABLANDO
+Título:
+Yo tampoco estudié Creator Economy.
+Bajada:
+Usé herramientas de gestión para construir una carrera dentro de una industria que estaba naciendo.
+Bloque bio:
+Karla Rodríguez
+Directora Estratégica de Creadores de Contenido
+Gestión Empresarial · PUCP
+Experiencia en corporativo, tecnología, operaciones y negocios digitales.
++8 años trabajando detrás de creadores y marcas personales.
+Cuatro territorios:
+ESTRATEGIA — decidir qué construir
+GESTIÓN — hacer que funcione
+NEGOCIO — capturar valor
+LECTURA HUMANA — proteger la esencia
+Remate:
+Mi trabajo no es hacer que un creador publique más. Es construir la estructura que necesita para crecer.
+
+SLIDE 3 — CARRERA
+Eyebrow: 02 · UNA MEJOR PREGUNTA
+Título:
+Tu carrera te da herramientas.
+Bajada:
+No siempre te dice dónde vas a terminar aplicándolas.
+Comparación:
+La pregunta tradicional → ¿Qué cargo quiero?
+La pregunta que abre posibilidades → ¿Qué problemas disfruto resolver?
+Apoyo:
+Entender personas · vender · ordenar · conectar · comunicar · convertir ideas en proyectos
+
+SLIDE 4 — INDUSTRIA
+Eyebrow: 03 · LA OPORTUNIDAD YA EXISTE
+Título:
+Esto ya es una industria.
+Bajada:
+La atención, las marcas y el dinero ya se están moviendo hacia este ecosistema. Por eso aparecen nuevas funciones profesionales.
+Datos:
+PERÚ · PUBLICIDAD 2025
+53% de toda la inversión publicitaria ya fue digital.
+45% de la inversión digital fue Social Ads.
+BRASIL · ECOSISTEMA YOUTUBE 2025
++R$6B de contribución al PIB.
++150K empleos equivalentes a tiempo completo.
+Nota:
+No significa que todos esos empleos sean “managers de creadores”. Sí demuestra que el ecosistema ya mueve economía, empresas y trabajo.
+Fuente pequeña:
+IAB Perú + PwC (2026) · YouTube / Oxford Economics (2026)
+
+SLIDE 5 — FRENTE / DETRÁS
+Eyebrow: 04 · AMPLIAR EL MAPA
+Título:
+Trabajar en contenido no significa ser creador.
+Bajada:
+La parte visible es solo una capa.
+Columna 1 — FRENTE AL CONTENIDO:
+Cámara
+Edición
+Producción
+Publicidad
+Columna 2 — DETRÁS DEL CONTENIDO:
+Estrategia
+Posicionamiento
+Comunidad
+Management & operaciones
+Remate:
+Cuando el creador crece, aparecen decisiones que ya no son solo creativas.
+
+SLIDE 6 — SLIDE MADRE
+Eyebrow: 05 · LA SLIDE MADRE
+Título:
+El sistema detrás del talento.
+Bajada:
+Un creador no necesita solamente publicaciones. Necesita decisiones que se conecten.
+Secuencia visual de 8 pasos:
+01 ¿Qué es?
+02 ¿Qué comunica?
+03 ¿Para quién?
+04 ¿Cómo crece?
+05 ¿Cómo crea comunidad?
+06 ¿Qué oportunidades toma?
+07 ¿Cómo convierte atención en negocio?
+08 ¿Cómo hace que todo funcione?
+Remate:
+A medida que esta cadena crece, también crece el espacio para profesionales detrás del creador.
+
+SLIDE 7 — POSICIONAMIENTO
+Eyebrow: 06 · ANTES DE PUBLICAR
+Título:
+Primero: ¿qué es este creador para su audiencia?
+Bajada:
+Dos personas pueden tener la misma cantidad de seguidores y necesitar estrategias completamente distintas.
+Roles:
+ESTRATEGA — ayuda a decidir
+DIRECTOR EDITORIAL — elige conversaciones
+LOCUTOR / HOST — conduce contextos
+EDUCADOR — convierte saber en aprendizaje
+ENTRETENEDOR — convierte atención en experiencia
+Remate:
+El posicionamiento define qué contenido, formatos, aliados, productos y oportunidades tienen sentido.
+
+SLIDE 8 — ESTRATEGIA DE CONTENIDO
+Eyebrow: 07 · DIRIGIR CONTENIDO
+Título:
+La estrategia no empieza con “¿qué publicamos hoy?”
+Bajada:
+Empieza preguntando qué queremos construir y qué función cumple cada pieza.
+Preguntas:
+01 ¿Qué lugar queremos ocupar?
+02 ¿Qué debemos comunicar?
+03 ¿A quién?
+04 ¿Cómo queremos crecer?
+05 ¿Qué debería provocar cada pieza?
+Bloque lateral:
+UNA IDEA ≠ UNA FUNCIÓN
+Atención
+Autoridad
+Confianza
+Conversación
+Acción
+Remate:
+El estratega decide qué idea sirve para qué dentro de algo más grande.
+
+SLIDE 9 — COMUNIDAD
+Eyebrow: 08 · COMUNIDAD
+Título:
+La comunicación no termina cuando publicas.
+Bajada:
+Una audiencia mira. Una comunidad participa. Y cuando participa empieza a darte información.
+Flujo:
+AUDIENCIA — mira
+→
+COMUNIDAD — participa
+→
+NEGOCIO — confía y actúa
+Remate:
+Escuchar → conversar → entender → conectar → activar
+
+SLIDE 10 — SINERGIAS
+Eyebrow: 09 · SINERGIAS
+Título:
+Crecer también es saber con quién conectar.
+Bajada:
+La creatividad detrás del contenido también consiste en conectar activos.
+Centro:
+CREADOR
+posición + audiencia + confianza
+Conexiones:
+MARCA → partnership
+OTRO CREADOR → colaboración
+EXPERTO → producto
+MEDIO / EVENTO → nueva audiencia
+Remate:
+Ver combinaciones es una habilidad estratégica: alguien tiene que convertir “podría pasar” en un proyecto real.
+
+SLIDE 11 — MANAGEMENT
+Eyebrow: 10 · EL TRABAJO INVISIBLE
+Título:
+Management & operaciones.
+Bajada:
+El crecimiento crea complejidad. Gestionar es convertir esa complejidad en decisiones, responsables y proyectos.
+Verbos:
+PRIORIZAR
+CONECTAR
+NEGOCIAR
+ORGANIZAR
+DIRIGIR
+CONVERTIR OPORTUNIDADES EN PROYECTOS
+Cita final:
+“El creador no debería administrar personalmente todo lo que su crecimiento genera.”
+
+SLIDE 12 — NEGOCIO
+Eyebrow: 11 · MONETIZACIÓN
+Título:
+¿Dónde aparece el negocio?
+Bajada:
+No es “cómo hacer plata siendo influencer”. Es cuántos negocios pueden existir alrededor de atención + confianza.
+4 categorías:
+ATENCIÓN
+Publicidad · Brand deals · Afiliados
+CONOCIMIENTO
+Cursos · Servicios · Consultoría · Conferencias
+COMUNIDAD
+Eventos · Experiencias · Membresías
+PROPIEDAD
+Productos · Marcas · Libros / IP
+Remate:
+Cada nueva línea de negocio aumenta la necesidad de estrategia, comunidad, management y operaciones.
+
+SLIDE 13 — CASO DANIEL BONIFAZ
+Eyebrow: 12 · CASO APLICADO
+Título:
+Daniel Bonifaz: lo que se ve vs. lo que hay detrás.
+Bajada:
+Durante tres años trabajé detrás de su negocio. Mi trabajo nunca fue decirle solamente qué reel grabar.
+Columna 1 — LO QUE LA AUDIENCIA VE:
+Contenido
+Voz
+Comunidad
+Productos
+Eventos
+Columna 2 — LO QUE EXISTE DETRÁS:
+Posicionamiento · estrategia · dirección editorial
+Equipo · oferta · alianzas · procesos · decisiones
+Remate:
+El contenido genera oportunidades. Pero las oportunidades por sí solas no construyen una empresa.
+Agregar PhotoPlaceholder “FOTO CASO” sin forzar foto si rompe la claridad.
+
+SLIDE 14 — DÓNDE ENTRAS TÚ
+Eyebrow: 13 · TU ENTRADA A LA INDUSTRIA
+Título:
+¿Dónde podrías entrar tú?
+Bajada:
+No tienes que querer ser creador para que esta industria sea para ti.
+Bloques:
+ESTRATEGIA DE CONTENIDO
+pensar · investigar · posicionar · comunicar · crecer
+COMUNIDAD
+escuchar · conversar · entender personas · conectar
+MANAGEMENT & OPERACIONES
+priorizar · negociar · organizar · coordinar · dirigir
+FRENTE AL CONTENIDO
+cámara · edición · producción · dirección creativa
+Remate:
+Empieza identificando qué problemas disfrutas resolver. Esa puede ser una mejor brújula que intentar adivinar tu cargo.
+
+SLIDE 15 — CIERRE
+Fondo oscuro.
+Tres líneas grandes:
+Creadores van a seguir apareciendo.
+Audiencias van a seguir creciendo.
+Nuevos productos van a seguir naciendo.
+Separador coral.
+Frase central:
+El problema es que alguien tiene que saber administrar todo eso.
+Cierre:
+Tu carrera puede estar frente al contenido o construyendo todo lo que existe detrás.
+Pie:
+Karla Rodríguez · @karlarodriguez · karla@matizuno.com
+
+CRITERIOS DE CALIDAD
+- La presentación debe verse lista para proyectarse en un auditorio.
+- Ninguna slide debe parecer una página web convencional.
+- No usar navegación superior tipo website.
+- No usar bloques de texto de más de 3–4 líneas salvo la bio/caso cuando sea indispensable.
+- Mantener márgenes amplios y consistentes.
+- La jerarquía debe ser visible a 5–10 metros de distancia.
+- No inventar cifras ni logros.
+- No agregar métricas de Daniel Bonifaz.
+- No inventar logos o marcas con las que Karla haya trabajado.
+- Para fotografías, deja espacios reemplazables.
+- Todo texto debe quedar en español.
+
+ARCHIVOS DE DESCARGA
+Asume que yo colocaré manualmente estos archivos en public/downloads/:
+Karla_USIL_Creator_Economy_15slides.pptx
+Karla_USIL_Creator_Economy_15slides.pdf
+Crea los links correctos a /downloads/... y una UI elegante para descarga.
+
+ENTREGA
+Implementa todo directamente. Al terminar:
+1. Ejecuta npm.cmd run build.
+2. Corrige cualquier error hasta que el build quede limpio.
+3. Dime únicamente qué archivos creaste/modificaste y cómo abrir la presentación localmente.
