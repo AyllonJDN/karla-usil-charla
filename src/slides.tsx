@@ -1,37 +1,31 @@
-import type { ReactNode } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
 
 export type Theme = 'dark' | 'light'
 
+const BASE = import.meta.env.BASE_URL
+const img = (name: string) => `${BASE}images/${name}`
+
 /* ---------- Primitivas ---------- */
 
-function Ornament({ theme }: { theme: Theme }) {
-  const c = theme === 'dark' ? '#C4D3F7' : '#F47358'
-  return (
-    <svg className="ornament" viewBox="0 0 1920 1080" aria-hidden="true">
-      <g fill="none" stroke={c} strokeWidth="1.4" opacity="0.22">
-        <ellipse cx="1700" cy="120" rx="460" ry="300" transform="rotate(-18 1700 120)" />
-        <ellipse cx="1760" cy="190" rx="360" ry="220" transform="rotate(-18 1760 190)" />
-        <path d="M-80 1010 C 300 860, 640 1140, 1000 1000" />
-      </g>
-    </svg>
-  )
-}
-
-export function PhotoPlaceholder({
-  label = 'FOTO KARLA',
+function Photo({
+  src,
+  pos = '50% 20%',
   className = '',
-  monogram,
+  style,
+  children,
 }: {
-  label?: string
+  src: string
+  pos?: string
   className?: string
-  monogram?: string
+  style?: CSSProperties
+  children?: ReactNode
 }) {
   return (
-    <div className={`photo ${className}`}>
-      <div className="photo-mass photo-mass-a" />
-      <div className="photo-mass photo-mass-b" />
-      {monogram && <span className="photo-mono">{monogram}</span>}
-      <span className="photo-label">{label}</span>
+    <div
+      className={`photo ${className}`}
+      style={{ backgroundImage: `url(${img(src)})`, backgroundPosition: pos, ...style }}
+    >
+      {children}
     </div>
   )
 }
@@ -41,49 +35,76 @@ function Frame({
   eyebrow,
   children,
   className = '',
+  chrome = true,
 }: {
   theme: Theme
   eyebrow?: string
   children: ReactNode
   className?: string
+  chrome?: boolean
 }) {
   return (
     <section className={`slide ${theme} ${className}`}>
-      <Ornament theme={theme} />
+      <div className="glow glow-a" />
+      <div className="glow glow-b" />
+      {chrome && (
+        <>
+          <div className="brand">
+            <span>KARLA</span> RODRÍGUEZ
+          </div>
+          <div className="year">2026</div>
+          <div className="mark">KR</div>
+        </>
+      )}
       {eyebrow && <div className="eyebrow">{eyebrow}</div>}
       <div className="slide-body">{children}</div>
     </section>
   )
 }
 
-function Lead({ children }: { children: ReactNode }) {
-  return <p className="lead">{children}</p>
+function Lead({ children, className = '' }: { children: ReactNode; className?: string }) {
+  return <p className={`lead ${className}`}>{children}</p>
 }
 function Remate({ children, className = '' }: { children: ReactNode; className?: string }) {
   return <p className={`remate ${className}`}>{children}</p>
+}
+function Float({ children, className = '', style }: { children: ReactNode; className?: string; style?: CSSProperties }) {
+  return (
+    <div className={`fcard ${className}`} style={style}>
+      {children}
+    </div>
+  )
 }
 
 /* ---------- Slides ---------- */
 
 const S1 = () => (
-  <Frame theme="dark" className="cover">
-    <div className="cover-grid">
-      <div className="cover-left">
-        <div className="eyebrow-inline">USIL × GLOBAL LEADERS CLUB</div>
-        <h1 className="t t-xl">
-          ¿Puedo construir una carrera en la industria de <em>creación de contenido?</em>
-        </h1>
-        <p className="lead">¿Qué oportunidades profesionales existen detrás del contenido?</p>
-        <div className="cover-foot">
-          <div>
-            <strong>Karla Rodríguez</strong>
-            <span>Directora Estratégica de Creadores de Contenido</span>
-          </div>
-          <div className="cover-meta">USIL × Global Leaders Club · 16 OCT 2026 · 4:00 PM</div>
-        </div>
-      </div>
-      <PhotoPlaceholder className="photo-arch" label="FOTO KARLA" monogram="KR" />
+  <Frame theme="dark" className="cover" chrome={false}>
+    <div className="cover-brand">
+      <span>KARLA</span> RODRÍGUEZ
     </div>
+    <div className="cover-year">2026</div>
+    <div className="cover-left">
+      <div className="eyebrow-inline">USIL × GLOBAL LEADERS CLUB</div>
+      <h1 className="t t-cover">
+        <span className="thin">¿Puedo construir</span>
+        <strong>una carrera en la industria de creación de contenido?</strong>
+      </h1>
+      <p className="lead">¿Qué oportunidades profesionales existen detrás del contenido?</p>
+      <div className="cover-foot">
+        <strong>Karla Rodríguez</strong>
+        <span>Directora Estratégica de Creadores de Contenido</span>
+        <div className="cover-meta">USIL × Global Leaders Club · 16 OCT 2026 · 4:00 PM</div>
+      </div>
+    </div>
+    <div className="cover-stage">
+      <div className="cover-disc" />
+      <Photo src="karla-1.jpg" pos="50% 14%" className="ph-arch cover-photo" />
+      <Float className="c1">Estrategia</Float>
+      <Float className="c2">Comunidad</Float>
+      <Float className="c3">Management &amp; operaciones</Float>
+    </div>
+    <div className="mark">KR</div>
   </Frame>
 )
 
@@ -96,14 +117,12 @@ const territorios = [
 
 const S2 = () => (
   <Frame theme="light" eyebrow="01 · QUIÉN ESTÁ HABLANDO">
-    <div className="cols s2">
-      <div>
+    <div className="s2">
+      <div className="s2-left">
         <h1 className="t t-lg">
           Yo tampoco estudié <em>Creator Economy.</em>
         </h1>
-        <Lead>
-          Usé herramientas de gestión para construir una carrera dentro de una industria que estaba naciendo.
-        </Lead>
+        <Lead>Usé herramientas de gestión para construir una carrera dentro de una industria que estaba naciendo.</Lead>
         <div className="bio">
           <div className="bio-name">Karla Rodríguez</div>
           <div className="bio-role">Directora Estratégica de Creadores de Contenido</div>
@@ -113,16 +132,17 @@ const S2 = () => (
         </div>
       </div>
       <div className="s2-right">
-        <div className="small-label">CUATRO TERRITORIOS</div>
-        <ul className="terr">
-          {territorios.map(([a, b]) => (
-            <li key={a}>
+        <Photo src="karla-2.jpg" pos="50% 10%" className="ph-arch s2-photo" />
+        <div className="small-label s2-label">CUATRO TERRITORIOS</div>
+        <div className="s2-cards">
+          {territorios.map(([a, b], i) => (
+            <Float key={a} className={`terr-card t${i}`}>
               <b>{a}</b>
               <span>{b}</span>
-            </li>
+            </Float>
           ))}
-        </ul>
-        <Remate>
+        </div>
+        <Remate className="s2-remate">
           Mi trabajo no es hacer que un creador publique más. Es construir la <em>estructura</em> que necesita para crecer.
         </Remate>
       </div>
@@ -132,13 +152,14 @@ const S2 = () => (
 
 const S3 = () => (
   <Frame theme="light" eyebrow="02 · UNA MEJOR PREGUNTA">
-    <div className="cols s3">
-      <div>
+    <div className="s3">
+      <div className="s3-left">
         <h1 className="t t-xl">
           Tu carrera te da <em>herramientas.</em>
         </h1>
         <Lead>No siempre te dice dónde vas a terminar aplicándolas.</Lead>
       </div>
+      <Photo src="karla-3.jpg" pos="50% 8%" className="ph-arch s3-photo" />
       <div className="compare">
         <div className="cmp cmp-old">
           <span className="small-label">LA PREGUNTA TRADICIONAL</span>
@@ -184,7 +205,7 @@ const S4 = () => (
           </div>
         </div>
       </div>
-      <div className="stat-group">
+      <div className="stat-group hot">
         <div className="small-label">BRASIL · ECOSISTEMA YOUTUBE 2025</div>
         <div className="stat-row">
           <div className="stat">
@@ -209,8 +230,8 @@ const S4 = () => (
 
 const S5 = () => (
   <Frame theme="light" eyebrow="04 · AMPLIAR EL MAPA">
-    <div className="cols s5">
-      <div>
+    <div className="s5">
+      <div className="s5-left">
         <h1 className="t t-lg">
           Trabajar en contenido no significa ser <em>creador.</em>
         </h1>
@@ -262,7 +283,7 @@ const S6 = () => (
     </div>
     <ol className="steps">
       {pasos.map((p, i) => (
-        <li key={p}>
+        <li key={p} className={i === pasos.length - 1 ? 'last' : ''}>
           <span className="step-n">{String(i + 1).padStart(2, '0')}</span>
           <span className="step-t">{p}</span>
         </li>
@@ -282,20 +303,18 @@ const roles = [
 
 const S7 = () => (
   <Frame theme="light" eyebrow="06 · ANTES DE PUBLICAR">
-    <div className="cols s7">
-      <div>
+    <div className="s7">
+      <div className="s7-left">
         <h1 className="t t-lg">
           Primero: ¿qué es este creador para su <em>audiencia?</em>
         </h1>
-        <Lead>
-          Dos personas pueden tener la misma cantidad de seguidores y necesitar estrategias completamente distintas.
-        </Lead>
+        <Lead>Dos personas pueden tener la misma cantidad de seguidores y necesitar estrategias completamente distintas.</Lead>
       </div>
-      <ul className="roles">
+      <ul className="rows">
         {roles.map(([a, b]) => (
           <li key={a}>
-            <b>{a}</b>
-            <span>{b}</span>
+            <b className="tag">{a}</b>
+            <span className="box">{b}</span>
           </li>
         ))}
       </ul>
@@ -316,8 +335,8 @@ const preguntas = [
 
 const S8 = () => (
   <Frame theme="light" eyebrow="07 · DIRIGIR CONTENIDO">
-    <div className="cols s8">
-      <div>
+    <div className="s8">
+      <div className="s8-left">
         <h1 className="t t-md">
           La estrategia no empieza con <em>“¿qué publicamos hoy?”</em>
         </h1>
@@ -325,8 +344,8 @@ const S8 = () => (
         <ol className="qs">
           {preguntas.map((q, i) => (
             <li key={q}>
-              <span>{String(i + 1).padStart(2, '0')}</span>
-              {q}
+              <b className="tag">{String(i + 1).padStart(2, '0')}</b>
+              <span className="box">{q}</span>
             </li>
           ))}
         </ol>
@@ -377,8 +396,8 @@ const S9 = () => (
 
 const S10 = () => (
   <Frame theme="light" eyebrow="09 · SINERGIAS">
-    <div className="cols s10">
-      <div>
+    <div className="s10">
+      <div className="s10-left">
         <h1 className="t t-lg">
           Crecer también es saber con quién <em>conectar.</em>
         </h1>
@@ -389,7 +408,7 @@ const S10 = () => (
       </div>
       <div className="map">
         <svg viewBox="0 0 900 760" className="map-lines" aria-hidden="true">
-          <g stroke="#F47358" strokeWidth="1.5" opacity="0.55" fill="none">
+          <g stroke="#F47358" strokeWidth="2" opacity="0.6" fill="none" strokeDasharray="2 9" strokeLinecap="round">
             <line x1="450" y1="380" x2="170" y2="130" />
             <line x1="450" y1="380" x2="730" y2="130" />
             <line x1="450" y1="380" x2="170" y2="630" />
@@ -411,8 +430,8 @@ const S10 = () => (
 
 const S11 = () => (
   <Frame theme="dark" eyebrow="10 · EL TRABAJO INVISIBLE">
-    <div className="cols s11">
-      <div>
+    <div className="s11">
+      <div className="s11-left">
         <h1 className="t t-xl">
           Management &amp; <em>operaciones.</em>
         </h1>
@@ -426,6 +445,7 @@ const S11 = () => (
         ))}
         <li className="verb-last">CONVERTIR OPORTUNIDADES EN PROYECTOS</li>
       </ul>
+      <Photo src="karla-4.jpg" pos="50% 15%" className="ph-arch s11-photo" />
     </div>
     <blockquote className="quote">
       “El creador no debería administrar personalmente todo lo que su <em>crecimiento</em> genera.”
@@ -452,7 +472,7 @@ const S12 = () => (
     </div>
     <div className="cats">
       {cats.map(([a, b], i) => (
-        <div className="cat" key={a}>
+        <div className={`cat c${i}`} key={a}>
           <span className="cat-n">{String(i + 1).padStart(2, '0')}</span>
           <b>{a}</b>
           <p>{b}</p>
@@ -468,7 +488,10 @@ const S12 = () => (
 const S13 = () => (
   <Frame theme="light" eyebrow="12 · CASO APLICADO">
     <div className="s13">
-      <PhotoPlaceholder className="photo-tall" label="FOTO CASO" />
+      <div className="s13-photo-wrap">
+        <Photo src="daniel.jpg" pos="50% 10%" className="ph-arch s13-photo" />
+        <Float className="d1">Daniel Bonifaz</Float>
+      </div>
       <div className="s13-right">
         <h1 className="t t-md">
           Daniel Bonifaz: lo que se ve vs. lo que hay <em>detrás.</em>
@@ -527,7 +550,14 @@ const S14 = () => (
 )
 
 const S15 = () => (
-  <Frame theme="dark" className="closing">
+  <Frame theme="dark" className="closing" chrome={false}>
+    <div className="close-panel">
+      <Photo src="karla-1.jpg" pos="50% 30%" className="close-photo" />
+    </div>
+    <div className="close-brand">
+      <span>KARLA</span> RODRÍGUEZ
+    </div>
+    <div className="cover-year">2026</div>
     <div className="close-body">
       <div className="close-lines">
         <p>
@@ -545,8 +575,9 @@ const S15 = () => (
       <p className="close-final">
         Tu carrera puede estar frente al contenido o construyendo todo lo que existe <em>detrás.</em>
       </p>
+      <div className="close-foot">Karla Rodríguez · @karlarodriguez · karla@matizuno.com</div>
     </div>
-    <div className="close-foot">Karla Rodríguez · @karlarodriguez · karla@matizuno.com</div>
+    <div className="mark">KR</div>
   </Frame>
 )
 

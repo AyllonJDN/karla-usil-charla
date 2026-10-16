@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Download, FileText, Maximize2, Menu, Minimize2, Presentation, X } from 'lucide-react'
 import { SLIDES } from './slides'
@@ -6,8 +6,9 @@ import { SLIDES } from './slides'
 const W = 1920
 const H = 1080
 const BASE = import.meta.env.BASE_URL
-const PPTX_URL = `${BASE}downloads/Karla_USIL_Creator_Economy_15slides.pptx`
-const PDF_NAME = 'Karla_USIL_Creator_Economy_15slides.pdf'
+const FILE_NAME = 'Karla_USIL_Creator_Economy_15slides'
+const PDF_URL = `${BASE}downloads/${FILE_NAME}.pdf`
+const PPTX_URL = `${BASE}downloads/${FILE_NAME}.pptx`
 const TOTAL = SLIDES.length
 
 function readHash() {
@@ -20,9 +21,7 @@ export default function App() {
   const [scale, setScale] = useState(1)
   const [presenting, setPresenting] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const [exporting, setExporting] = useState(false)
   const reduce = useReducedMotion()
-  const exportRef = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {
     const fit = () => setScale(Math.min(window.innerWidth / W, window.innerHeight / H))
@@ -114,29 +113,6 @@ export default function App() {
     return () => window.removeEventListener('keydown', onKey)
   }, [next, prev, go, toggleFullscreen])
 
-  const exportPdf = useCallback(async () => {
-    setMenuOpen(false)
-    setExporting(true)
-    try {
-      await document.fonts.ready
-      await new Promise((r) => setTimeout(r, 300))
-      const [{ default: html2canvas }, { jsPDF }] = await Promise.all([import('html2canvas'), import('jspdf')])
-      const nodes = exportRef.current?.querySelectorAll<HTMLElement>('.slide')
-      if (!nodes?.length) return
-      const pdf = new jsPDF({ orientation: 'landscape', unit: 'px', format: [W, H], compress: true })
-      for (let i = 0; i < nodes.length; i++) {
-        const canvas = await html2canvas(nodes[i], { width: W, height: H, scale: 1, useCORS: true, backgroundColor: null, logging: false })
-        if (i > 0) pdf.addPage([W, H], 'landscape')
-        pdf.addImage(canvas.toDataURL('image/jpeg', 0.93), 'JPEG', 0, 0, W, H)
-      }
-      pdf.save(PDF_NAME)
-    } catch (err) {
-      console.error('Error al exportar PDF', err)
-    } finally {
-      setExporting(false)
-    }
-  }, [])
-
   const Current = SLIDES[index]
   const dur = reduce ? 0 : 0.3
 
@@ -174,8 +150,8 @@ export default function App() {
             {menuOpen && (
               <div className="menu-pop" role="menu">
                 <button onClick={enterPresent}><Presentation size={17} /> Presentar</button>
-                <button onClick={exportPdf} disabled={exporting}><FileText size={17} /> Descargar PDF</button>
-                <a href={PPTX_URL} download="Karla_USIL_Creator_Economy_15slides.pptx"><Download size={17} /> Descargar PPTX</a>
+                <a href={PDF_URL} download><FileText size={17} /> Descargar PDF</a>
+                <a href={PPTX_URL} download><Download size={17} /> Descargar PPTX</a>
               </div>
             )}
           </div>
@@ -188,15 +164,6 @@ export default function App() {
         </div>
       )}
 
-      {exporting && <div className="exporting-toast">Generando PDF…</div>}
-
-      {exporting && (
-        <div className="export-root" ref={exportRef} aria-hidden="true">
-          {SLIDES.map((S, i) => (
-            <S key={i} />
-          ))}
-        </div>
-      )}
     </>
   )
 }
