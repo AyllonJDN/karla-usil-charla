@@ -67,9 +67,9 @@ const S1 = () => (
     </div>
     <div className="cover-left">
       <div className="logos">
-        <img src={img('logo-usil.png')} alt="USIL" onError={(e) => ((e.currentTarget.style.display = 'none'), (e.currentTarget.nextElementSibling as HTMLElement | null)?.setAttribute('style', 'display:none'))} />
+        <img src={img('logo-usil-cream.png')} alt="USIL" />
         <span className="logo-sep" />
-        <img src={img('logo-glc.png')} alt="Global Leaders Club" />
+        <img src={img('logo-glc-cream.png')} alt="Global Leaders Club" />
       </div>
       <h1 className="t t-cover">
         <span className="thin">¿Puedo construir</span>
@@ -128,6 +128,7 @@ const S_P = () => (
       <div className="sP-pills">
         <div className="hot">Gestión Empresarial · PUCP</div>
         <div>+8 años junto a creadores y marcas personales</div>
+        <div>Estrategia · gestión · monetización · equipos · comunidad · lectura humana</div>
         <div>Metodología propia para profesionalizar la Creator Economy en Latinoamérica</div>
       </div>
     </div>
@@ -143,7 +144,7 @@ const S_P = () => (
         <span className="small-label">6 AÑOS EN LOGÍSTICA</span>
         <div className="lg-row">
           <img src={img('logo-promart.png')} alt="Promart" style={{ height: 52 }} />
-          <span className="lg-ph">LOGO GESTNEXT</span>
+          <img src={img('logo-gesnext.png')} alt="GesNext" style={{ height: 44 }} />
           <img src={img('logo-telefonica.png')} alt="Telefónica" style={{ height: 38 }} />
         </div>
       </div>
@@ -223,8 +224,16 @@ const S_D7 = () => (
       </h1>
       <Lead>Antes de gestionar un negocio, entiende al humano que lo sostiene.</Lead>
     </div>
-    <div className="bubA">La estructura no debe reemplazar al humano.</div>
-    <div className="bubB">Debe permitir que su talento genere valor sin consumirlo.</div>
+    <div className="yn">
+      <div className="yn-r no">
+        <span className="yn-i">✕</span>
+        <p>La estructura no debe <em>reemplazar</em> al humano.</p>
+      </div>
+      <div className="yn-r yes">
+        <span className="yn-i">✓</span>
+        <p>Debe permitir que su talento <em>genere valor</em> sin consumirlo.</p>
+      </div>
+    </div>
   </Frame>
 )
 
@@ -236,18 +245,21 @@ const S_E1 = () => (
       </h1>
       <Lead>Con eso como base, trabajamos todo lo demás.</Lead>
     </div>
-    <div className="vn vn1">
+    <div className="vn vn1" />
+    <div className="vn vn2" />
+    <div className="vt vt1">
       <b>LO HUMANO</b>
-      <span>esencia · confianza</span>
+      <span>esencia</span>
+      <span>confianza</span>
     </div>
-    <div className="vn vn2">
+    <div className="vt vt2">
       <b>LO EMPRESARIAL</b>
-      <span>estrategia · negocio</span>
+      <span>estrategia</span>
+      <span>negocio</span>
     </div>
-    <div className="vn-c">
-      MARCA PERSONAL
-      <br />
-      COMO NEGOCIO
+    <div className="vt vt3">
+      <b>MARCA PERSONAL</b>
+      <b>COMO NEGOCIO</b>
     </div>
   </Frame>
 )
@@ -341,8 +353,6 @@ const S_T3 = () => (
   </Frame>
 )
 
-const ecoN = ['Contenido', 'Comunidad', 'Propiedad intelectual', 'Experiencias', 'Negocio', 'Equipo']
-
 const S6a = () => (
   <Frame theme="dark" eyebrow="17 · EL SISTEMA DETRÁS DEL TALENTO" className="s6a">
     <div className="s6a-left">
@@ -351,26 +361,20 @@ const S6a = () => (
       </h1>
       <Lead>Alrededor de su talento aparece un ecosistema completo que hay que conectar y dirigir.</Lead>
     </div>
-    <svg viewBox="0 0 900 700" className="orbit-lines" aria-hidden="true">
-      <g stroke="#ffb6a4" strokeWidth="2" opacity="0.5" strokeDasharray="2 9" strokeLinecap="round" fill="none">
-        {ecoN.map((_, i) => {
-          const a = (i * 60 - 90) * (Math.PI / 180)
-          return <line key={i} x1="450" y1="350" x2={450 + 270 * Math.cos(a)} y2={350 + 270 * Math.sin(a)} />
-        })}
-      </g>
-    </svg>
-    <div className="orbit-core">
-      <b>PERSONA</b>
-      <span>talento</span>
+    <div className="s6a-right">
+      <div className="s6a-top">
+        <b>PERSONA</b>
+        <span>talento</span>
+      </div>
+      <div className="gridc">
+      <div className="gcard hot"><b>Contenido</b><span>YouTube · TikTok · Instagram</span></div>
+      <div className="gcard"><b>Comunidad</b><span>Discord · WhatsApp · eventos</span></div>
+      <div className="gcard"><b>Propiedad intelectual</b><span>formatos · cursos · libros</span></div>
+      <div className="gcard"><b>Experiencias</b><span>charlas · conferencias</span></div>
+      <div className="gcard"><b>Negocio</b><span>servicios · productos · marcas</span></div>
+      <div className="gcard"><b>Equipo</b><span>estrategia · producción · finanzas</span></div>
+      </div>
     </div>
-    {ecoN.map((x, i) => {
-      const a = (i * 60 - 90) * (Math.PI / 180)
-      return (
-        <div key={x} className={`orbit-n ${i === 0 ? 'hot' : ''}`} style={{ left: 1260 + 270 * Math.cos(a) - 85, top: 500 + 270 * Math.sin(a) - 85 }}>
-          {x}
-        </div>
-      )
-    })}
   </Frame>
 )
 
@@ -451,33 +455,19 @@ const SMa = () => (
       </h1>
       <Lead>Ver conexiones es estrategia. Elegir cuáles construir requiere criterio.</Lead>
     </div>
-    <svg viewBox="0 0 1920 1080" className="hubR-lines" aria-hidden="true">
-      <g stroke="#F47358" strokeWidth="2" opacity="0.55" strokeDasharray="2 9" strokeLinecap="round" fill="none">
-        {[0, 1, 2, 3, 4].map((i) => {
-          const a = (i * 72 - 90) * (Math.PI / 180)
-          return <line key={i} x1="1385" y1="540" x2={1385 + 270 * Math.cos(a)} y2={540 + 270 * Math.sin(a)} />
-        })}
-      </g>
-    </svg>
-    <div className="hubR-c">
-      <b>CREADOR</b>
+    <div className="sMa-right">
+      <div className="s6a-top lightc">
+        <b>CREADOR</b>
+        <span>conecta con</span>
+      </div>
+      <div className="gridc">
+      <div className="gcard"><b>MARCA</b><span>distribución</span></div>
+      <div className="gcard"><b>OTRO CREADOR</b><span>nuevas audiencias</span></div>
+      <div className="gcard"><b>EXPERTO</b><span>producto</span></div>
+      <div className="gcard"><b>MEDIO O EVENTO</b><span>exposición</span></div>
+      <div className="gcard"><b>EMPRESA</b><span>nuevos modelos</span></div>
+      </div>
     </div>
-    {[
-      ['MARCA', 'distribución'],
-      ['OTRO CREADOR', 'nuevas audiencias'],
-      ['EXPERTO', 'producto'],
-      ['MEDIO O EVENTO', 'exposición'],
-      ['EMPRESA', 'nuevos modelos'],
-    ].map(([a, b], i) => {
-      const k = [0, 1, 4, 3, 2][i] // orden visual
-      const ang = (k * 72 - 90) * (Math.PI / 180)
-      return (
-        <div key={a} className="hubR-n" style={{ left: 1385 + 270 * Math.cos(ang) - 125, top: 540 + 270 * Math.sin(ang) - 42 }}>
-          <b>{a}</b>
-          <span>{b}</span>
-        </div>
-      )
-    })}
   </Frame>
 )
 
@@ -558,13 +548,6 @@ const S2 = () => (
         Yo tampoco estudié <em>Creator Economy.</em>
       </h1>
       <Lead>Usé herramientas de gestión para construir una carrera dentro de una industria que estaba naciendo.</Lead>
-      <div className="bio">
-        <div className="bio-name">Karla Rodríguez</div>
-        <div className="bio-role">Directora Estratégica de Creadores de Contenido</div>
-        <div className="bio-line">Gestión Empresarial · PUCP</div>
-        <div className="bio-line">Experiencia en corporativo, tecnología, operaciones y negocios digitales.</div>
-        <div className="bio-line">+8 años trabajando detrás de creadores y marcas personales.</div>
-      </div>
       <Remate>
         Mi trabajo no es hacer que un creador publique más. Es construir la <em>estructura</em> que necesita para crecer.
       </Remate>
