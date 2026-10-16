@@ -480,11 +480,8 @@ const SMa = () => (
 
 const pasosM = [
   ['DETECTAR', '¿vale la pena?'],
-  ['PRIORIZAR', '¿encaja con la estrategia?'],
   ['NEGOCIAR', '¿qué gana cada parte?'],
-  ['DISEÑAR', '¿cómo se vuelve proyecto?'],
   ['OPERAR', '¿quién hace qué y cuándo?'],
-  ['MEDIR', '¿generó valor?'],
 ]
 
 const SMb = () => (
@@ -498,7 +495,7 @@ const SMb = () => (
     </div>
     <div className="steps6">
       {pasosM.map(([a, b], i) => (
-        <div key={a} className={`st ${i === 5 ? 'hot' : ''}`}>
+        <div key={a} className={`st ${i === 2 ? 'hot' : ''}`}>
           <b className="tag">{a}</b>
           <span className="box">{b}</span>
         </div>
@@ -542,10 +539,10 @@ const S14 = () => (
 
 
 const territorios = [
-  ['ESTRATEGIA', 'decidir qué construir'],
-  ['GESTIÓN', 'hacer que funcione'],
-  ['NEGOCIO', 'capturar valor'],
-  ['LECTURA HUMANA', 'proteger la esencia'],
+  ['Estrategia', ''],
+  ['Gestión', ''],
+  ['Negocio', ''],
+  ['Lectura humana', ''],
 ]
 
 const S2 = () => (
@@ -562,10 +559,9 @@ const S2 = () => (
     <div className="blob" />
     <Cut src="karla-2.png" />
     <div className="small-label s2-label">CUATRO TERRITORIOS</div>
-    {territorios.map(([a, b], i) => (
+    {territorios.map(([a], i) => (
       <Float key={a} className={`terr-card t${i}`}>
-        <b>{a}</b>
-        <span>{b}</span>
+        <span>{a}</span>
       </Float>
     ))}
   </Frame>
@@ -611,16 +607,6 @@ const S5 = () => (
         Trabajar en contenido no significa ser <em>creador.</em>
       </h1>
       <Lead>La parte visible es solo una capa.</Lead>
-    </div>
-    <div className="grp g-front">
-      <div className="small-label">FRENTE AL CONTENIDO</div>
-      <div className="grid">
-        {['Cámara', 'Edición', 'Producción', 'Publicidad'].map((x) => (
-          <div className="item" key={x}>
-            {x}
-          </div>
-        ))}
-      </div>
     </div>
     <div className="blob" />
     <Cut src="karla-4.png" />

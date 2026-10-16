@@ -1019,3 +1019,14 @@ em { font-style: italic; font-weight: 500; }
 .vt3 b { font-size: 21px; letter-spacing: 0.08em; }
 .pp1 img { object-position: 72% 0; width: 230px; left: -30px; }
 .sE1 .lead { max-width: 560px; } .sE1 .sE-left { width: 640px; }
+
+/* ronda 7 */
+.terr-card { width: 330px; padding: 24px 40px; }
+.terr-card span { font-family: var(--serif); font-style: italic; font-size: 44px; }
+.steps6 { top: 270px; gap: 26px; }
+.st { height: 150px; grid-template-columns: 300px 1fr; }
+.st .tag { font-size: 30px; }
+.st .box { font-size: 46px; }
+.pp1 img { object-fit: cover; object-position: 50% 0; width: 170px; left: 0; }
+.s5 .remate { top: 700px; }
+.pp1 .p-disc { background: linear-gradient(160deg, #f47358, #8f2447); border: 0; } .s5 .remate { top: 640px; }
