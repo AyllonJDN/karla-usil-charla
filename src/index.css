@@ -211,9 +211,9 @@ em { font-style: italic; font-weight: 500; }
 .s12 .remate { margin-top: 0; }
 
 /* ---------- 13 · Caso ---------- */
-.s13 .blob { width: 760px; height: 760px; left: 30px; top: 280px; }
-.s13 .cut { height: 900px; left: 90px; }
-.d1 { left: 120px; top: 820px; font-size: 32px; }
+.s13 .blob { width: 700px; height: 700px; left: 50px; top: 300px; }
+.s13 .cut { height: 820px; left: 20px; }
+.d1 { left: 110px; top: 830px; font-size: 32px; }
 .s13-right { position: absolute; left: 800px; top: 150px; width: 1010px; display: flex; flex-direction: column; height: 800px; }
 .s13 .lead { font-size: 27px; margin-top: 20px; max-width: 900px; }
 .duo { display: grid; grid-template-columns: 1fr 1fr; margin-top: 26px; }
