@@ -214,7 +214,7 @@ em { font-style: italic; font-weight: 500; }
 .s13 .blob { width: 700px; height: 700px; left: 50px; top: 300px; }
 .s13 .cut { height: 820px; left: 20px; }
 .d1 { left: 110px; top: 830px; font-size: 32px; }
-.s13-right { position: absolute; left: 800px; top: 150px; width: 1010px; display: flex; flex-direction: column; height: 800px; }
+.s13-right { position: absolute; left: 800px; top: 150px; width: 1010px; display: flex; flex-direction: column; height: 820px; }
 .s13 .lead { font-size: 27px; margin-top: 20px; max-width: 900px; }
 .duo { display: grid; grid-template-columns: 1fr 1fr; margin-top: 26px; }
 .duo-col { padding: 24px 30px 28px; }
@@ -405,3 +405,33 @@ em { font-style: italic; font-weight: 500; }
 .sC .layers { top: 560px; }
 .sC .vs { top: 300px; }
 .s13b .mark-logo { filter: brightness(0) invert(1); }
+
+/* ---------- Ajustes: venn, slide madre en cuadrícula, caso Daniel unificado ---------- */
+.venn { width: 600px; height: 600px; top: 240px; justify-content: center; align-items: center; text-align: center; padding-top: 0; }
+.v1 { left: 900px; padding: 0 320px 0 40px; }
+.v2 { left: 1210px; padding: 0 40px 0 320px; text-align: center; align-items: center; }
+.venn b { font-size: 19px; }
+.venn span { font-size: 34px; }
+.vc { left: 1355px; top: 540px; }
+.s6 .remate-top { top: 280px; }
+.grid8 { position: absolute; left: 110px; right: 110px; top: 500px; list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.grid8 li { height: 210px; border-radius: 30px; padding: 22px 28px; border: 1.5px solid rgba(196, 211, 247, 0.45); background: rgba(255, 255, 255, 0.07); }
+.grid8 li.last { background: var(--grad); border-color: transparent; box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35); }
+.grid8 .step-n { font-size: 50px; }
+.grid8 li.last .step-n { color: var(--cream); }
+.grid8 .step-t { font-size: 33px; line-height: 1.12; margin-top: 8px; }
+.s13 .t-md { font-size: 62px; }
+.s13 .lead { font-size: 25px; margin-top: 14px; }
+.s13 .duo { margin-top: 18px; }
+.s13 .duo-col { padding: 20px 28px 22px; }
+.s13 .duo ul { display: flex; flex-wrap: wrap; gap: 0 18px; margin-top: 6px; }
+.s13 .duo li { font-size: 32px; padding: 2px 0; }
+.s13 .duo p { font-size: 28px; margin: 8px 0 0; }
+.result { display: grid; grid-template-columns: 380px 1fr; gap: 18px; margin-top: 18px; }
+.r-num { padding: 20px 30px; border-radius: 34px; border: 1.5px solid rgba(244, 115, 88, 0.55); background: rgba(255, 255, 255, 0.78); display: flex; flex-direction: column; justify-content: center; }
+.r-num b { font-family: var(--serif); font-weight: 600; font-size: 100px; line-height: 1; color: var(--coral); }
+.r-num span { font-size: 22px; font-weight: 600; line-height: 1.25; margin-top: 6px; }
+.s13 .became { margin-top: 0; padding: 20px 32px 22px; border-radius: 34px; }
+.s13 .became p { font-size: 32px; margin: 8px 0 2px; }
+.s13 .became strong { font-size: 42px; }
+.s13 .remate { font-size: 28px; padding: 16px 26px; margin-top: auto; }

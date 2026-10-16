@@ -33,7 +33,6 @@ function Frame({
           <div className="brand">
             <span>KARLA</span> RODRÍGUEZ
           </div>
-          <div className="year">2026</div>
         </>
       )}
       <img className="mark-logo" src={img(theme === 'dark' ? 'logo-matiz-cream.png' : 'logo-matiz.png')} alt="Matiz" />
@@ -64,7 +63,6 @@ const S1 = () => (
     <div className="cover-brand">
       <span>KARLA</span> RODRÍGUEZ
     </div>
-    <div className="cover-year">2026</div>
     <div className="cover-left">
       <div className="logos">
         <img src={img('logo-usil.png')} alt="USIL" onError={(e) => ((e.currentTarget.style.display = 'none'), (e.currentTarget.nextElementSibling as HTMLElement | null)?.setAttribute('style', 'display:none'))} />
@@ -327,9 +325,9 @@ const S6 = () => (
       <Lead>Un creador no necesita solamente publicaciones. Necesita decisiones que se conecten.</Lead>
     </div>
     <Remate className="remate-top">A medida que esta cadena crece, también crece el espacio para profesionales detrás del creador.</Remate>
-    <ol className="stair">
+    <ol className="grid8">
       {pasos.map((p, i) => (
-        <li key={p} className={i === pasos.length - 1 ? 'last' : ''} style={{ left: i * 208, top: 790 - i * 34 }}>
+        <li key={p} className={i === pasos.length - 1 ? 'last' : ''}>
           <span className="step-n">{String(i + 1).padStart(2, '0')}</span>
           <span className="step-t">{p}</span>
         </li>
@@ -551,27 +549,16 @@ const S13 = () => (
           <p>Equipo · oferta · alianzas · procesos · decisiones</p>
         </div>
       </div>
-    </div>
-  </Frame>
-)
-
-
-const S13b = () => (
-  <Frame theme="light" eyebrow="16 · CASO APLICADO · RESULTADO" className="s13b">
-    <div className="blob" />
-    <Cut src="daniel.png" />
-    <div className="s13b-left">
-      <h1 className="t t-xl">
-        Tres años <em>después.</em>
-      </h1>
-      <div className="bub-big">
-        <b>+350%</b>
-        <span>crecimiento de la facturación</span>
-      </div>
-      <div className="became">
-        <span className="small-label">EL RESULTADO MÁS IMPORTANTE</span>
-        <p>Daniel se convirtió en:</p>
-        <strong>content founder, creator, padre y esposo presente.</strong>
+      <div className="result">
+        <div className="r-num">
+          <b>+350%</b>
+          <span>crecimiento de la facturación en 3 años</span>
+        </div>
+        <div className="became">
+          <span className="small-label">EL RESULTADO MÁS IMPORTANTE</span>
+          <p>Daniel se convirtió en:</p>
+          <strong>content founder, creator, padre y esposo presente.</strong>
+        </div>
       </div>
       <Remate>
         El contenido genera oportunidades. Pero las oportunidades por sí solas no construyen una <em>empresa.</em>
@@ -579,6 +566,7 @@ const S13b = () => (
     </div>
   </Frame>
 )
+
 
 const entradas = [
   ['ESTRATEGIA DE CONTENIDO', 'pensar · investigar · posicionar · comunicar · crecer'],
@@ -588,7 +576,7 @@ const entradas = [
 ]
 
 const S14 = () => (
-  <Frame theme="light" eyebrow="17 · TU ENTRADA A LA INDUSTRIA" className="s14">
+  <Frame theme="light" eyebrow="16 · TU ENTRADA A LA INDUSTRIA" className="s14">
     <div className="s14-left">
       <h1 className="t t-xl">
         ¿Dónde podrías entrar <em>tú?</em>
@@ -619,7 +607,6 @@ const S15 = () => (
     <div className="close-brand">
       <span>KARLA</span> RODRÍGUEZ
     </div>
-    <div className="cover-year">2026</div>
     <div className="close-body">
       <div className="close-lines">
         <p>
@@ -651,7 +638,6 @@ const S20 = () => (
     <div className="close-brand">
       <span>KARLA</span> RODRÍGUEZ
     </div>
-    <div className="cover-year">2026</div>
     <div className="final-body">
       <h1 className="t t-xl">
         Sigamos en <em>contacto.</em>
@@ -671,4 +657,4 @@ const S20 = () => (
   </Frame>
 )
 
-export const SLIDES: (() => ReactNode)[] = [S1, S_A, S_B, S_C, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S13b, S14, S15, S20]
+export const SLIDES: (() => ReactNode)[] = [S1, S_A, S_B, S_C, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S20]
