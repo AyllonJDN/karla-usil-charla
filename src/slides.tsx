@@ -150,7 +150,7 @@ const S_P = () => (
       </div>
     </div>
     <div className="small-label sP-label">8 AÑOS EN CREACIÓN DE CONTENIDO</div>
-    <Person cls="pp1" name="Cynthia · maquilladora" style={{ left: 990, top: 470 }} />
+    <Person cls="pp1" src="cynthia.png" name="Cynthia · @lamaquilladora" style={{ left: 990, top: 470 }} />
     <Person cls="pp2" src="daniel.png" name="Daniel Bonifaz" style={{ left: 1280, top: 470 }} />
     <Person cls="pp3" src="wendy.png" name="Wendy Wünder" style={{ left: 1570, top: 470 }} />
     <Person cls="pp4" src="flavio-galvez.png" name="Flavio Gálvez" style={{ left: 1135, top: 780 }} />
@@ -455,19 +455,26 @@ const SMa = () => (
       </h1>
       <Lead>Ver conexiones es estrategia. Elegir cuáles construir requiere criterio.</Lead>
     </div>
-    <div className="sMa-right">
-      <div className="s6a-top lightc">
-        <b>CREADOR</b>
-        <span>conecta con</span>
-      </div>
-      <div className="gridc">
-      <div className="gcard"><b>MARCA</b><span>distribución</span></div>
-      <div className="gcard"><b>OTRO CREADOR</b><span>nuevas audiencias</span></div>
-      <div className="gcard"><b>EXPERTO</b><span>producto</span></div>
-      <div className="gcard"><b>MEDIO O EVENTO</b><span>exposición</span></div>
-      <div className="gcard"><b>EMPRESA</b><span>nuevos modelos</span></div>
-      </div>
+    <div className="orb-track" />
+    <div className="orb-core">
+      <b>CREADOR</b>
+      <span>conecta con</span>
     </div>
+    {[
+      ['MARCA', 'distribución'],
+      ['OTRO CREADOR', 'nuevas audiencias'],
+      ['EXPERTO', 'producto'],
+      ['MEDIO O EVENTO', 'exposición'],
+      ['EMPRESA', 'nuevos modelos'],
+    ].map(([a, b], i) => {
+      const ang = (i * 72 - 90) * (Math.PI / 180)
+      return (
+        <div key={a} className={`orb-n ${i % 2 === 0 ? '' : 'alt'}`} style={{ left: 1385 + 285 * Math.cos(ang) - 100, top: 540 + 285 * Math.sin(ang) - 100 }}>
+          <b>{a}</b>
+          <span>{b}</span>
+        </div>
+      )
+    })}
   </Frame>
 )
 
@@ -592,10 +599,6 @@ const S4 = () => (
       <span className="small-label">PERÚ · 2025</span>
       <b>≈ US$147M</b>
       <span>invertidos en Social Ads (US$326M en publicidad digital total).</span>
-    </div>
-    <div className="note-row">
-      <p className="note">Perú aún no mide públicamente el tamaño total de su Creator Economy. La inversión digital y social indica hacia dónde se mueven la atención y los presupuestos.</p>
-      <p className="source">Fuentes: Goldman Sachs · IAB Spain · IAB Perú + PwC</p>
     </div>
   </Frame>
 )

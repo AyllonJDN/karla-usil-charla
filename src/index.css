@@ -870,10 +870,6 @@ em { font-style: italic; font-weight: 500; }
 .logos .logo-sep { background: rgba(255, 250, 245, 0.4); height: 64px; }
 
 /* centrado vertical por slide */
-.sD3 .slide-body, .sD4n .slide-body, .s4 .slide-body, .sD7n .slide-body, .sE1 .slide-body, .sE2 .slide-body, .sE3 .slide-body, .sT1 .slide-body, .sT2 .slide-body, .sT3 .slide-body, .s6a .slide-body, .s6b .slide-body, .sMa .slide-body, .sMb .slide-body { transform: scale(0.92) translateY(50px); }
-.s4 .slide-body { transform: scale(0.92) translateY(30px); }
-.sP .slide-body { transform: scale(0.92) translateY(20px); }
-.s12 .slide-body, .s14 .slide-body { transform: scale(0.92) translateY(20px); }
 
 /* 3 */
 .sD3-left { top: 280px; height: auto; }
@@ -941,3 +937,85 @@ em { font-style: italic; font-weight: 500; }
 .sMa .gcard:nth-child(even) { transform: none; }
 .sMa .gridc { gap: 16px; }
 .s6a-right, .sMa-right { top: 230px; }
+
+/* ====== Ronda 6: centrado real y espacios compactos ====== */
+.slide-body.safe { transform: scale(0.92); }
+
+.sP-left { top: 220px; }
+
+/* 3 */
+.sD3-left { top: 320px; }
+.sD3-disc { top: 295px; }
+.sD3 .f1 { top: 255px; } .sD3 .f2 { top: 405px; } .sD3 .f3 { top: 555px; } .sD3 .f4 { top: 705px; }
+
+/* 4 */
+.sD4n .sD4-left { top: 370px; }
+.sD4-cards { top: 300px; }
+.sE3 .sE-left { top: 370px; }
+
+/* 7 */
+.sD7n .sD7-left { top: 360px; }
+.yn { top: 330px; }
+
+/* 8 */
+.sE1 .sE-left, .sE2 .sE-left { top: 380px; }
+.vn { width: 640px; height: 640px; top: 220px; }
+.vn1 { left: 790px; } .vn2 { left: 1180px; }
+.vt { top: 480px; }
+.vt1 { left: 845px; width: 290px; } .vt2 { left: 1485px; width: 290px; }
+.vt3 { left: 1165px; width: 270px; top: 505px; }
+.vt3 b { font-size: 26px; }
+.vt span { font-size: 44px; }
+.vt b { font-size: 24px; }
+.pyr { top: 325px; }
+
+/* 9 · nota pegada al texto */
+.s4-top { position: absolute; left: 110px; top: 300px; width: 760px; padding-top: 0; }
+.s4 .note-row { position: static; width: 760px; flex-direction: column; align-items: flex-start; gap: 14px; margin-top: 44px; }
+.s4 .note { font-size: 20px; }
+.b1 { top: 150px; } .b2 { top: 190px; } .b3 { top: 560px; } .b4 { top: 590px; }
+
+/* 13 / 14 / 15 */
+.sT1 .sT-left { top: 300px; }
+.orbs { top: 560px; }
+.sT2-left { top: 330px; }
+.qlist { top: 300px; }
+.sT3-flow { top: 240px; }
+.sT3-quote { top: 730px; }
+
+/* 17 / 18 */
+.s6a-left { top: 330px; }
+.s6a-right { top: 240px; }
+.s6b-t { top: 250px; }
+.tri { top: 500px; }
+
+/* 20 · centrado en columna */
+.s12 .slide-body, .s14 .slide-body { justify-content: center; gap: 44px; padding-top: 130px; padding-bottom: 130px; }
+.s12 .head { margin: 0; }
+.s12 .cats { flex: none; height: 430px; padding: 0; margin: 0; }
+.s12 .remate { position: static; margin: 0; max-width: none; }
+.s14 .s14-top, .s14 .paths, .s14 .remate { position: static; width: auto; margin: 0; }
+.s14 .paths { gap: 22px 26px; }
+.s14 .remate { max-width: none; }
+
+/* 21 · órbita */
+.sMa-left { top: 360px; width: 700px; }
+.orb-track { position: absolute; left: 1100px; top: 255px; width: 570px; height: 570px; border-radius: 50%; border: 1.5px solid rgba(244, 115, 88, 0.35); }
+.orb-core { position: absolute; left: 1255px; top: 410px; width: 260px; height: 260px; border-radius: 50%; background: var(--grad); color: var(--cream); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: var(--shadow); z-index: 3; }
+.orb-core b { font-family: var(--serif); font-size: 44px; font-weight: 600; letter-spacing: 0.04em; }
+.orb-core span { font-family: var(--serif); font-style: italic; font-size: 30px; color: #ffe2d9; }
+.orb-n { position: absolute; width: 200px; height: 200px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; background: rgba(255, 255, 255, 0.92); border: 1.5px solid var(--coral); box-shadow: 0 16px 36px rgba(71, 11, 36, 0.14); z-index: 2; }
+.orb-n.alt { background: var(--cream); }
+.orb-n b { font-size: 16px; letter-spacing: 0.1em; font-weight: 800; line-height: 1.2; }
+.orb-n span { font-family: var(--serif); font-style: italic; font-size: 25px; color: var(--coral); line-height: 1.1; margin-top: 6px; }
+
+/* personas: Cynthia */
+.pp1 img { object-fit: cover; object-position: 55% 0; }
+.b1 { top: 215px; } .b2 { top: 255px; } .b3 { top: 625px; } .b4 { top: 655px; }
+.s4-top { top: 340px; }
+.s6b-t { top: 320px; } .tri { top: 570px; }
+.sD3-disc { top: 345px; } .sD3 .f1 { top: 305px; } .sD3 .f2 { top: 455px; } .sD3 .f3 { top: 605px; } .sD3 .f4 { top: 755px; }
+.sD4-cards { top: 360px; }
+.vt3 b { font-size: 21px; letter-spacing: 0.08em; }
+.pp1 img { object-position: 72% 0; width: 230px; left: -30px; }
+.sE1 .lead { max-width: 560px; } .sE1 .sE-left { width: 640px; }
