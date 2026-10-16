@@ -7,27 +7,8 @@ const img = (name: string) => `${BASE}images/${name}`
 
 /* ---------- Primitivas ---------- */
 
-function Photo({
-  src,
-  pos = '50% 20%',
-  className = '',
-  style,
-  children,
-}: {
-  src: string
-  pos?: string
-  className?: string
-  style?: CSSProperties
-  children?: ReactNode
-}) {
-  return (
-    <div
-      className={`photo ${className}`}
-      style={{ backgroundImage: `url(${img(src)})`, backgroundPosition: pos, ...style }}
-    >
-      {children}
-    </div>
-  )
+function Cut({ src, style, className = '' }: { src: string; style?: CSSProperties; className?: string }) {
+  return <img className={`cut ${className}`} src={img(src)} style={style} alt="" />
 }
 
 function Frame({
@@ -53,9 +34,9 @@ function Frame({
             <span>KARLA</span> RODRÍGUEZ
           </div>
           <div className="year">2026</div>
-          <div className="mark">KR</div>
         </>
       )}
+      <img className="mark-logo" src={img(theme === 'dark' ? 'logo-matiz-cream.png' : 'logo-matiz.png')} alt="Matiz" />
       {eyebrow && <div className="eyebrow">{eyebrow}</div>}
       <div className="slide-body">{children}</div>
     </section>
@@ -85,7 +66,11 @@ const S1 = () => (
     </div>
     <div className="cover-year">2026</div>
     <div className="cover-left">
-      <div className="eyebrow-inline">USIL × GLOBAL LEADERS CLUB</div>
+      <div className="logos">
+        <img src={img('logo-usil.png')} alt="USIL" onError={(e) => ((e.currentTarget.style.display = 'none'), (e.currentTarget.nextElementSibling as HTMLElement | null)?.setAttribute('style', 'display:none'))} />
+        <span className="logo-sep" />
+        <img src={img('logo-glc.png')} alt="Global Leaders Club" />
+      </div>
       <h1 className="t t-cover">
         <span className="thin">¿Puedo construir</span>
         <strong>una carrera en la industria de creación de contenido?</strong>
@@ -94,17 +79,13 @@ const S1 = () => (
       <div className="cover-foot">
         <strong>Karla Rodríguez</strong>
         <span>Directora Estratégica de Creadores de Contenido</span>
-        <div className="cover-meta">USIL × Global Leaders Club · 16 OCT 2026 · 4:00 PM</div>
       </div>
     </div>
-    <div className="cover-stage">
-      <div className="cover-disc" />
-      <Photo src="karla-1.jpg" pos="50% 14%" className="ph-arch cover-photo" />
-      <Float className="c1">Estrategia</Float>
-      <Float className="c2">Comunidad</Float>
-      <Float className="c3">Management &amp; operaciones</Float>
-    </div>
-    <div className="mark">KR</div>
+    <div className="blob" />
+    <Cut src="karla-1.png" />
+    <Float className="c1">Estrategia</Float>
+    <Float className="c2">Comunidad</Float>
+    <Float className="c3">Management &amp; operaciones</Float>
   </Frame>
 )
 
@@ -116,73 +97,67 @@ const territorios = [
 ]
 
 const S2 = () => (
-  <Frame theme="light" eyebrow="01 · QUIÉN ESTÁ HABLANDO">
-    <div className="s2">
-      <div className="s2-left">
-        <h1 className="t t-lg">
-          Yo tampoco estudié <em>Creator Economy.</em>
-        </h1>
-        <Lead>Usé herramientas de gestión para construir una carrera dentro de una industria que estaba naciendo.</Lead>
-        <div className="bio">
-          <div className="bio-name">Karla Rodríguez</div>
-          <div className="bio-role">Directora Estratégica de Creadores de Contenido</div>
-          <div className="bio-line">Gestión Empresarial · PUCP</div>
-          <div className="bio-line">Experiencia en corporativo, tecnología, operaciones y negocios digitales.</div>
-          <div className="bio-line">+8 años trabajando detrás de creadores y marcas personales.</div>
-        </div>
+  <Frame theme="light" eyebrow="01 · QUIÉN ESTÁ HABLANDO" className="s2">
+    <div className="s2-left">
+      <h1 className="t t-lg">
+        Yo tampoco estudié <em>Creator Economy.</em>
+      </h1>
+      <Lead>Usé herramientas de gestión para construir una carrera dentro de una industria que estaba naciendo.</Lead>
+      <div className="bio">
+        <div className="bio-name">Karla Rodríguez</div>
+        <div className="bio-role">Directora Estratégica de Creadores de Contenido</div>
+        <div className="bio-line">Gestión Empresarial · PUCP</div>
+        <div className="bio-line">Experiencia en corporativo, tecnología, operaciones y negocios digitales.</div>
+        <div className="bio-line">+8 años trabajando detrás de creadores y marcas personales.</div>
       </div>
-      <div className="s2-right">
-        <Photo src="karla-2.jpg" pos="50% 10%" className="ph-arch s2-photo" />
-        <div className="small-label s2-label">CUATRO TERRITORIOS</div>
-        <div className="s2-cards">
-          {territorios.map(([a, b], i) => (
-            <Float key={a} className={`terr-card t${i}`}>
-              <b>{a}</b>
-              <span>{b}</span>
-            </Float>
-          ))}
-        </div>
-        <Remate className="s2-remate">
-          Mi trabajo no es hacer que un creador publique más. Es construir la <em>estructura</em> que necesita para crecer.
-        </Remate>
-      </div>
+      <Remate>
+        Mi trabajo no es hacer que un creador publique más. Es construir la <em>estructura</em> que necesita para crecer.
+      </Remate>
     </div>
+    <div className="blob" />
+    <Cut src="karla-2.png" />
+    <div className="small-label s2-label">CUATRO TERRITORIOS</div>
+    {territorios.map(([a, b], i) => (
+      <Float key={a} className={`terr-card t${i}`}>
+        <b>{a}</b>
+        <span>{b}</span>
+      </Float>
+    ))}
   </Frame>
 )
 
 const S3 = () => (
-  <Frame theme="light" eyebrow="02 · UNA MEJOR PREGUNTA">
-    <div className="s3">
-      <div className="s3-left">
-        <h1 className="t t-xl">
-          Tu carrera te da <em>herramientas.</em>
-        </h1>
-        <Lead>No siempre te dice dónde vas a terminar aplicándolas.</Lead>
-      </div>
-      <Photo src="karla-3.jpg" pos="50% 8%" className="ph-arch s3-photo" />
-      <div className="compare">
-        <div className="cmp cmp-old">
-          <span className="small-label">LA PREGUNTA TRADICIONAL</span>
-          <p>¿Qué cargo quiero?</p>
-        </div>
-        <div className="cmp cmp-new">
-          <span className="small-label">LA PREGUNTA QUE ABRE POSIBILIDADES</span>
-          <p>
-            ¿Qué <em>problemas</em> disfruto resolver?
-          </p>
-        </div>
-      </div>
+  <Frame theme="light" eyebrow="02 · UNA MEJOR PREGUNTA" className="s3">
+    <div className="s3-left">
+      <h1 className="t t-xl">
+        Tu carrera te da <em>herramientas.</em>
+      </h1>
+      <Lead>No siempre te dice dónde vas a terminar aplicándolas.</Lead>
     </div>
     <div className="chips">
       {['Entender personas', 'vender', 'ordenar', 'conectar', 'comunicar', 'convertir ideas en proyectos'].map((c) => (
         <span key={c}>{c}</span>
       ))}
     </div>
+    <div className="blob" />
+    <Cut src="karla-3.png" />
+    <div className="compare">
+      <div className="cmp cmp-old">
+        <span className="small-label">LA PREGUNTA TRADICIONAL</span>
+        <p>¿Qué cargo quiero?</p>
+      </div>
+      <div className="cmp cmp-new">
+        <span className="small-label">LA PREGUNTA QUE ABRE POSIBILIDADES</span>
+        <p>
+          ¿Qué <em>problemas</em> disfruto resolver?
+        </p>
+      </div>
+    </div>
   </Frame>
 )
 
 const S4 = () => (
-  <Frame theme="dark" eyebrow="03 · LA OPORTUNIDAD YA EXISTE">
+  <Frame theme="dark" eyebrow="03 · LA OPORTUNIDAD YA EXISTE" className="s4">
     <div className="s4-top">
       <h1 className="t t-xl">
         Esto ya es una <em>industria.</em>
@@ -191,33 +166,23 @@ const S4 = () => (
         La atención, las marcas y el dinero ya se están moviendo hacia este ecosistema. Por eso aparecen nuevas funciones profesionales.
       </Lead>
     </div>
-    <div className="stats">
-      <div className="stat-group">
-        <div className="small-label">PERÚ · PUBLICIDAD 2025</div>
-        <div className="stat-row">
-          <div className="stat">
-            <b>53%</b>
-            <span>de toda la inversión publicitaria ya fue digital.</span>
-          </div>
-          <div className="stat">
-            <b>45%</b>
-            <span>de la inversión digital fue Social Ads.</span>
-          </div>
-        </div>
-      </div>
-      <div className="stat-group hot">
-        <div className="small-label">BRASIL · ECOSISTEMA YOUTUBE 2025</div>
-        <div className="stat-row">
-          <div className="stat">
-            <b>+R$6B</b>
-            <span>de contribución al PIB.</span>
-          </div>
-          <div className="stat">
-            <b>+150K</b>
-            <span>empleos equivalentes a tiempo completo.</span>
-          </div>
-        </div>
-      </div>
+    <div className="small-label stat-label sl1">PERÚ · PUBLICIDAD 2025</div>
+    <div className="bub b1">
+      <b>53%</b>
+      <span>de toda la inversión publicitaria ya fue digital.</span>
+    </div>
+    <div className="bub b2">
+      <b>45%</b>
+      <span>de la inversión digital fue Social Ads.</span>
+    </div>
+    <div className="small-label stat-label sl2">BRASIL · ECOSISTEMA YOUTUBE 2025</div>
+    <div className="bub hot b3">
+      <b>+R$6B</b>
+      <span>de contribución al PIB.</span>
+    </div>
+    <div className="bub hot b4">
+      <b>+150K</b>
+      <span>empleos equivalentes a tiempo completo.</span>
     </div>
     <div className="note-row">
       <p className="note">
@@ -229,31 +194,33 @@ const S4 = () => (
 )
 
 const S5 = () => (
-  <Frame theme="light" eyebrow="04 · AMPLIAR EL MAPA">
-    <div className="s5">
-      <div className="s5-left">
-        <h1 className="t t-lg">
-          Trabajar en contenido no significa ser <em>creador.</em>
-        </h1>
-        <Lead>La parte visible es solo una capa.</Lead>
+  <Frame theme="light" eyebrow="04 · AMPLIAR EL MAPA" className="s5">
+    <div className="s5-left">
+      <h1 className="t t-lg">
+        Trabajar en contenido no significa ser <em>creador.</em>
+      </h1>
+      <Lead>La parte visible es solo una capa.</Lead>
+    </div>
+    <div className="grp g-front">
+      <div className="small-label">FRENTE AL CONTENIDO</div>
+      <div className="grid">
+        {['Cámara', 'Edición', 'Producción', 'Publicidad'].map((x) => (
+          <div className="item" key={x}>
+            {x}
+          </div>
+        ))}
       </div>
-      <div className="duo">
-        <div className="duo-col duo-front">
-          <div className="small-label">FRENTE AL CONTENIDO</div>
-          <ul>
-            {['Cámara', 'Edición', 'Producción', 'Publicidad'].map((x) => (
-              <li key={x}>{x}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="duo-col duo-back">
-          <div className="small-label">DETRÁS DEL CONTENIDO</div>
-          <ul>
-            {['Estrategia', 'Posicionamiento', 'Comunidad', 'Management & operaciones'].map((x) => (
-              <li key={x}>{x}</li>
-            ))}
-          </ul>
-        </div>
+    </div>
+    <div className="blob" />
+    <Cut src="karla-4.png" />
+    <div className="grp g-back">
+      <div className="small-label">DETRÁS DEL CONTENIDO</div>
+      <div className="stack">
+        {['Estrategia', 'Posicionamiento', 'Comunidad', 'Management & operaciones'].map((x) => (
+          <div className="item" key={x}>
+            {x}
+          </div>
+        ))}
       </div>
     </div>
     <Remate>
@@ -274,22 +241,22 @@ const pasos = [
 ]
 
 const S6 = () => (
-  <Frame theme="dark" eyebrow="05 · LA SLIDE MADRE">
+  <Frame theme="dark" eyebrow="05 · LA SLIDE MADRE" className="s6">
     <div className="head">
       <h1 className="t t-xl">
         El sistema detrás del <em>talento.</em>
       </h1>
       <Lead>Un creador no necesita solamente publicaciones. Necesita decisiones que se conecten.</Lead>
     </div>
-    <ol className="steps">
+    <Remate className="remate-top">A medida que esta cadena crece, también crece el espacio para profesionales detrás del creador.</Remate>
+    <ol className="stair">
       {pasos.map((p, i) => (
-        <li key={p} className={i === pasos.length - 1 ? 'last' : ''}>
+        <li key={p} className={i === pasos.length - 1 ? 'last' : ''} style={{ left: i * 208, top: 790 - i * 34 }}>
           <span className="step-n">{String(i + 1).padStart(2, '0')}</span>
           <span className="step-t">{p}</span>
         </li>
       ))}
     </ol>
-    <Remate>A medida que esta cadena crece, también crece el espacio para profesionales detrás del creador.</Remate>
   </Frame>
 )
 
@@ -366,28 +333,27 @@ const S8 = () => (
 )
 
 const S9 = () => (
-  <Frame theme="dark" eyebrow="08 · COMUNIDAD">
+  <Frame theme="dark" eyebrow="08 · COMUNIDAD" className="s9">
     <div className="head">
       <h1 className="t t-lg">
         La comunicación no termina cuando <em>publicas.</em>
       </h1>
       <Lead>Una audiencia mira. Una comunidad participa. Y cuando participa empieza a darte información.</Lead>
     </div>
-    <div className="flow">
-      {[
-        ['AUDIENCIA', 'mira'],
-        ['COMUNIDAD', 'participa'],
-        ['NEGOCIO', 'confía y actúa'],
-      ].map(([a, b], i) => (
-        <div className="flow-wrap" key={a}>
-          {i > 0 && <span className="flow-arrow">→</span>}
-          <div className="flow-node">
-            <b>{a}</b>
-            <span>{b}</span>
-          </div>
-        </div>
-      ))}
+    <div className="ring r1">
+      <b>AUDIENCIA</b>
+      <span>mira</span>
     </div>
+    <div className="ring r2">
+      <b>COMUNIDAD</b>
+      <span>participa</span>
+    </div>
+    <div className="ring r3">
+      <b>NEGOCIO</b>
+      <span>confía y actúa</span>
+    </div>
+    <span className="ring-arrow" style={{ left: 478 }}>→</span>
+    <span className="ring-arrow" style={{ left: 1052 }}>→</span>
     <Remate className="remate-flow">
       Escuchar → conversar → entender → conectar → <em>activar</em>
     </Remate>
@@ -429,27 +395,24 @@ const S10 = () => (
 )
 
 const S11 = () => (
-  <Frame theme="dark" eyebrow="10 · EL TRABAJO INVISIBLE">
-    <div className="s11">
-      <div className="s11-left">
-        <h1 className="t t-xl">
-          Management &amp; <em>operaciones.</em>
-        </h1>
-        <Lead>
-          El crecimiento crea complejidad. Gestionar es convertir esa complejidad en decisiones, responsables y proyectos.
-        </Lead>
-      </div>
-      <ul className="verbs">
-        {['PRIORIZAR', 'CONECTAR', 'NEGOCIAR', 'ORGANIZAR', 'DIRIGIR'].map((v) => (
-          <li key={v}>{v}</li>
-        ))}
-        <li className="verb-last">CONVERTIR OPORTUNIDADES EN PROYECTOS</li>
-      </ul>
-      <Photo src="karla-4.jpg" pos="50% 15%" className="ph-arch s11-photo" />
+  <Frame theme="dark" eyebrow="10 · EL TRABAJO INVISIBLE" className="s11">
+    <div className="s11-left">
+      <h1 className="t t-xl">
+        Management &amp; <em>operaciones.</em>
+      </h1>
+      <Lead>El crecimiento crea complejidad. Gestionar es convertir esa complejidad en decisiones, responsables y proyectos.</Lead>
     </div>
     <blockquote className="quote">
       “El creador no debería administrar personalmente todo lo que su <em>crecimiento</em> genera.”
     </blockquote>
+    <div className="blob" />
+    <Cut src="karla-4.png" />
+    <ul className="verbs">
+      {['PRIORIZAR', 'CONECTAR', 'NEGOCIAR', 'ORGANIZAR', 'DIRIGIR'].map((v) => (
+        <li key={v}>{v}</li>
+      ))}
+      <li className="verb-last">CONVERTIR OPORTUNIDADES EN PROYECTOS</li>
+    </ul>
   </Frame>
 )
 
@@ -461,7 +424,7 @@ const cats = [
 ]
 
 const S12 = () => (
-  <Frame theme="light" eyebrow="11 · MONETIZACIÓN">
+  <Frame theme="light" eyebrow="11 · MONETIZACIÓN" className="s12">
     <div className="head">
       <h1 className="t t-xl">
         ¿Dónde aparece el <em>negocio?</em>
@@ -486,36 +449,33 @@ const S12 = () => (
 )
 
 const S13 = () => (
-  <Frame theme="light" eyebrow="12 · CASO APLICADO">
-    <div className="s13">
-      <div className="s13-photo-wrap">
-        <Photo src="daniel.jpg" pos="50% 10%" className="ph-arch s13-photo" />
-        <Float className="d1">Daniel Bonifaz</Float>
-      </div>
-      <div className="s13-right">
-        <h1 className="t t-md">
-          Daniel Bonifaz: lo que se ve vs. lo que hay <em>detrás.</em>
-        </h1>
-        <Lead>Durante tres años trabajé detrás de su negocio. Mi trabajo nunca fue decirle solamente qué reel grabar.</Lead>
-        <div className="duo duo-small">
-          <div className="duo-col duo-front">
-            <div className="small-label">LO QUE LA AUDIENCIA VE</div>
-            <ul>
-              {['Contenido', 'Voz', 'Comunidad', 'Productos', 'Eventos'].map((x) => (
-                <li key={x}>{x}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="duo-col duo-back">
-            <div className="small-label">LO QUE EXISTE DETRÁS</div>
-            <p>Posicionamiento · estrategia · dirección editorial</p>
-            <p>Equipo · oferta · alianzas · procesos · decisiones</p>
-          </div>
+  <Frame theme="light" eyebrow="12 · CASO APLICADO" className="s13">
+    <div className="blob" />
+    <Cut src="daniel.png" />
+    <Float className="d1">Daniel Bonifaz</Float>
+    <div className="s13-right">
+      <h1 className="t t-md">
+        Daniel Bonifaz: lo que se ve vs. lo que hay <em>detrás.</em>
+      </h1>
+      <Lead>Durante tres años trabajé detrás de su negocio. Mi trabajo nunca fue decirle solamente qué reel grabar.</Lead>
+      <div className="duo">
+        <div className="duo-col duo-front">
+          <div className="small-label">LO QUE LA AUDIENCIA VE</div>
+          <ul>
+            {['Contenido', 'Voz', 'Comunidad', 'Productos', 'Eventos'].map((x) => (
+              <li key={x}>{x}</li>
+            ))}
+          </ul>
         </div>
-        <Remate>
-          El contenido genera oportunidades. Pero las oportunidades por sí solas no construyen una <em>empresa.</em>
-        </Remate>
+        <div className="duo-col duo-back">
+          <div className="small-label">LO QUE EXISTE DETRÁS</div>
+          <p>Posicionamiento · estrategia · dirección editorial</p>
+          <p>Equipo · oferta · alianzas · procesos · decisiones</p>
+        </div>
       </div>
+      <Remate>
+        El contenido genera oportunidades. Pero las oportunidades por sí solas no construyen una <em>empresa.</em>
+      </Remate>
     </div>
   </Frame>
 )
@@ -528,8 +488,8 @@ const entradas = [
 ]
 
 const S14 = () => (
-  <Frame theme="light" eyebrow="13 · TU ENTRADA A LA INDUSTRIA">
-    <div className="head">
+  <Frame theme="light" eyebrow="13 · TU ENTRADA A LA INDUSTRIA" className="s14">
+    <div className="s14-left">
       <h1 className="t t-xl">
         ¿Dónde podrías entrar <em>tú?</em>
       </h1>
@@ -543,6 +503,8 @@ const S14 = () => (
         </div>
       ))}
     </div>
+    <div className="blob" />
+    <Cut src="karla-2.png" />
     <Remate>
       Empieza identificando qué problemas disfrutas resolver. Esa puede ser una mejor <em>brújula</em> que intentar adivinar tu cargo.
     </Remate>
@@ -551,9 +513,9 @@ const S14 = () => (
 
 const S15 = () => (
   <Frame theme="dark" className="closing" chrome={false}>
-    <div className="close-panel">
-      <Photo src="karla-1.jpg" pos="50% 30%" className="close-photo" />
-    </div>
+    <div className="close-panel" />
+    <div className="blob" />
+    <Cut src="karla-1.png" />
     <div className="close-brand">
       <span>KARLA</span> RODRÍGUEZ
     </div>
@@ -577,7 +539,6 @@ const S15 = () => (
       </p>
       <div className="close-foot">Karla Rodríguez · @karlarodriguez · karla@matizuno.com</div>
     </div>
-    <div className="mark">KR</div>
   </Frame>
 )
 
