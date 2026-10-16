@@ -88,6 +88,23 @@ const S1 = () => (
 )
 
 
+const Socials = () => (
+  <span className="socials">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-label="Instagram">
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+    </svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-label="TikTok">
+      <path d="M15 3v11a4 4 0 1 1-4-4M15 3c.3 2.6 1.9 4.2 5 4.4" />
+    </svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-label="YouTube">
+      <rect x="2" y="5" width="20" height="14" rx="4" />
+      <path d="M10 9l5 3-5 3z" fill="currentColor" />
+    </svg>
+  </span>
+)
+
 const Person = ({ src, name, cls, style }: { src?: string; name: string; cls: string; style: CSSProperties }) => (
   <div className={`person ${cls}`} style={style}>
     <div className="p-photo">
@@ -100,7 +117,7 @@ const Person = ({ src, name, cls, style }: { src?: string; name: string; cls: st
 )
 
 const S_P = () => (
-  <Frame theme="light" eyebrow="01 · PRESENTACIÓN" className="sP">
+  <Frame theme="light" eyebrow="02 · PRESENTACIÓN" className="sP">
     <div className="sP-left">
       <h1 className="t t-lg">
         Karla <em>Rodríguez.</em>
@@ -134,16 +151,16 @@ const S_P = () => (
       </div>
     </div>
     <div className="small-label sP-label">8 AÑOS EN CREACIÓN DE CONTENIDO</div>
-    <Person cls="pp1" name="Cynthia · maquilladora" style={{ left: 960, top: 500 }} />
-    <Person cls="pp2" src="daniel.png" name="Daniel Bonifaz" style={{ left: 1250, top: 490 }} />
-    <Person cls="pp3" src="wendy.png" name="Wendy Wünder" style={{ left: 1540, top: 500 }} />
-    <Person cls="pp4" src="flavio-galvez.png" name="Flavio Gálvez" style={{ left: 1105, top: 780 }} />
-    <Person cls="pp5" src="flavio-sanchez.png" name="Flavio Sánchez" style={{ left: 1450, top: 790 }} />
+    <Person cls="pp1" name="Cynthia · maquilladora" style={{ left: 990, top: 470 }} />
+    <Person cls="pp2" src="daniel.png" name="Daniel Bonifaz" style={{ left: 1280, top: 470 }} />
+    <Person cls="pp3" src="wendy.png" name="Wendy Wünder" style={{ left: 1570, top: 470 }} />
+    <Person cls="pp4" src="flavio-galvez.png" name="Flavio Gálvez" style={{ left: 1135, top: 780 }} />
+    <Person cls="pp5" src="flavio-sanchez.png" name="Flavio Sánchez" style={{ left: 1425, top: 780 }} />
   </Frame>
 )
 
 const S_D3 = () => (
-  <Frame theme="light" eyebrow="02 · QUÉ ES LA CREATOR ECONOMY" className="sD3">
+  <Frame theme="light" eyebrow="03 · QUÉ ES LA CREATOR ECONOMY" className="sD3">
     <div className="sD3-left">
       <h1 className="t t-xl">
         ¿Qué es la <em>Creator Economy?</em>
@@ -167,7 +184,7 @@ const S_D3 = () => (
 )
 
 const S_D4 = () => (
-  <Frame theme="light" eyebrow="03 · NO ES LO MISMO" className="sD4">
+  <Frame theme="light" eyebrow="04 · NO ES LO MISMO" className="sD4">
     <div className="sD4-left">
       <h1 className="t t-xl">
         Influencer marketing <em>≠</em> Creator Economy.
@@ -186,7 +203,7 @@ const S_D4 = () => (
 )
 
 const S_D5 = () => (
-  <Frame theme="dark" eyebrow="04 · LA INDUSTRIA" className="sD5">
+  <Frame theme="dark" eyebrow="05 · LA INDUSTRIA" className="sD5">
     <p className="sD5-pre">La Creator Economy es la industria que convierte</p>
     <div className="sD5-words">
       {['talento', 'conocimiento', 'atención', 'confianza'].map((w) => (
@@ -211,7 +228,7 @@ const S_D6 = () => (
     <div className="close-brand">
       <span>KARLA</span> RODRÍGUEZ
     </div>
-    <div className="eyebrow-r">05 · EL PRINCIPIO BÁSICO</div>
+    <div className="eyebrow-r">06 · EL PRINCIPIO BÁSICO</div>
     <div className="sD6-body">
       <span className="sD6-q">?</span>
       <h1 className="t t-xl">
@@ -222,7 +239,7 @@ const S_D6 = () => (
 )
 
 const S_D7 = () => (
-  <Frame theme="dark" eyebrow="06 · LO PRIMERO ES HUMANO" className="sD7">
+  <Frame theme="dark" eyebrow="07 · LO PRIMERO ES HUMANO" className="sD7">
     <div className="sD7-left">
       <h1 className="t t-xl">
         El activo principal es <em>una persona.</em>
@@ -240,7 +257,7 @@ const S_D7 = () => (
 )
 
 const S_E = () => (
-  <Frame theme="light" eyebrow="07 · PRIMERO LA ESENCIA" className="sE">
+  <Frame theme="light" eyebrow="08 · PRIMERO LA ESENCIA" className="sE">
     <div className="sE-left">
       <h1 className="t t-lg">
         Partimos de la esencia <em>humana.</em>
@@ -284,7 +301,7 @@ const territorios = [
 ]
 
 const S2 = () => (
-  <Frame theme="light" eyebrow="09 · QUIÉN ESTÁ HABLANDO" className="s2">
+  <Frame theme="light" eyebrow="10 · QUIÉN ESTÁ HABLANDO" className="s2">
     <div className="s2-left">
       <h1 className="t t-lg">
         Yo tampoco estudié <em>Creator Economy.</em>
@@ -314,7 +331,7 @@ const S2 = () => (
 )
 
 const S3 = () => (
-  <Frame theme="light" eyebrow="10 · UNA MEJOR PREGUNTA" className="sT">
+  <Frame theme="light" eyebrow="11 · UNA MEJOR PREGUNTA" className="sT">
     <div className="sT-left">
       <h1 className="t t-lg">
         Tu carrera no define dónde vas a terminar. <em>Te da herramientas para resolver problemas.</em>
@@ -356,7 +373,7 @@ const S3 = () => (
 )
 
 const S4 = () => (
-  <Frame theme="dark" eyebrow="08 · LA OPORTUNIDAD YA EXISTE" className="s4">
+  <Frame theme="dark" eyebrow="09 · LA OPORTUNIDAD YA EXISTE" className="s4">
     <div className="s4-top">
       <h1 className="t t-xl">
         Esto ya es una <em>industria.</em>
@@ -395,7 +412,7 @@ const S4 = () => (
 )
 
 const S5 = () => (
-  <Frame theme="light" eyebrow="11 · AMPLIAR EL MAPA" className="s5">
+  <Frame theme="light" eyebrow="12 · AMPLIAR EL MAPA" className="s5">
     <div className="s5-left">
       <h1 className="t t-lg">
         Trabajar en contenido no significa ser <em>creador.</em>
@@ -430,227 +447,170 @@ const S5 = () => (
   </Frame>
 )
 
-const pasos = [
-  '¿Qué es?',
-  '¿Qué comunica?',
-  '¿Para quién?',
-  '¿Cómo crece?',
-  '¿Cómo crea comunidad?',
-  '¿Qué oportunidades toma?',
-  '¿Cómo convierte atención en negocio?',
-  '¿Cómo hace que todo funcione?',
+const eco = [
+  ['COMUNIDAD', 'Discord · WhatsApp · membresías · eventos · lives'],
+  ['PROPIEDAD INTELECTUAL', 'formatos · metodologías · cursos · libros · workshops'],
+  ['EXPERIENCIAS', 'charlas · conferencias · eventos · meet & greets'],
+  ['NEGOCIO', 'servicios · productos · marcas · licencias · ecommerce'],
+  ['COMERCIAL', 'brand deals · sponsors · partnerships · afiliados'],
+  ['EQUIPO', 'estrategia · producción · edición · ventas · operaciones · finanzas · management'],
+]
+
+const logica = [
+  ['GENERAR VALOR', 'Sistema Editorial', 'Transforma talento y conocimiento en contenido, formatos, ideas y propiedad intelectual.'],
+  ['CAPTURAR VALOR', 'Sistema de Comunidad', 'Convierte atención en relación, confianza, conversación y pertenencia.'],
+  ['ESCALAR VALOR', 'Sistema de Negocio', 'Convierte esa confianza en productos, servicios, experiencias, activos y empresa.'],
 ]
 
 const S6 = () => (
-  <Frame theme="dark" eyebrow="12 · LA SLIDE MADRE" className="s6">
-    <div className="head">
-      <h1 className="t t-xl">
-        El sistema detrás del <em>talento.</em>
-      </h1>
-      <Lead>Un creador no necesita solamente publicaciones. Necesita decisiones que se conecten.</Lead>
-    </div>
-    <Remate className="remate-top">A medida que esta cadena crece, también crece el espacio para profesionales detrás del creador.</Remate>
-    <ol className="grid8">
-      {pasos.map((p, i) => (
-        <li key={p} className={i === pasos.length - 1 ? 'last' : ''}>
-          <span className="step-n">{String(i + 1).padStart(2, '0')}</span>
-          <span className="step-t">{p}</span>
-        </li>
-      ))}
-    </ol>
-  </Frame>
-)
-
-const roles = [
-  ['ESTRATEGA', 'ayuda a decidir'],
-  ['DIRECTOR EDITORIAL', 'elige conversaciones'],
-  ['LOCUTOR / HOST', 'conduce contextos'],
-  ['EDUCADOR', 'convierte saber en aprendizaje'],
-  ['ENTRETENEDOR', 'convierte atención en experiencia'],
-]
-
-const S7 = () => (
-  <Frame theme="light" eyebrow="13 · ANTES DE PUBLICAR">
-    <div className="s7">
-      <div className="s7-left">
-        <h1 className="t t-lg">
-          Primero: ¿qué es este creador para su <em>audiencia?</em>
-        </h1>
-        <Lead>Dos personas pueden tener la misma cantidad de seguidores y necesitar estrategias completamente distintas.</Lead>
-      </div>
-      <ul className="rows">
-        {roles.map(([a, b]) => (
-          <li key={a}>
-            <b className="tag">{a}</b>
-            <span className="box">{b}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-    <Remate>
-      El posicionamiento define qué contenido, formatos, aliados, productos y oportunidades tienen <em>sentido.</em>
-    </Remate>
-  </Frame>
-)
-
-const preguntas = [
-  '¿Qué lugar queremos ocupar?',
-  '¿Qué debemos comunicar?',
-  '¿A quién?',
-  '¿Cómo queremos crecer?',
-  '¿Qué debería provocar cada pieza?',
-]
-
-const S8 = () => (
-  <Frame theme="light" eyebrow="14 · DIRIGIR CONTENIDO">
-    <div className="s8">
-      <div className="s8-left">
-        <h1 className="t t-md">
-          La estrategia no empieza con <em>“¿qué publicamos hoy?”</em>
-        </h1>
-        <Lead>Empieza preguntando qué queremos construir y qué función cumple cada pieza.</Lead>
-        <ol className="qs">
-          {preguntas.map((q, i) => (
-            <li key={q}>
-              <b className="tag">{String(i + 1).padStart(2, '0')}</b>
-              <span className="box">{q}</span>
-            </li>
-          ))}
-        </ol>
-      </div>
-      <aside className="side-dark">
-        <div className="small-label">UNA IDEA ≠ UNA FUNCIÓN</div>
-        <ul>
-          {['Atención', 'Autoridad', 'Confianza', 'Conversación', 'Acción'].map((x) => (
-            <li key={x}>{x}</li>
-          ))}
-        </ul>
-      </aside>
-    </div>
-    <Remate>
-      El estratega decide qué idea sirve para qué dentro de algo más <em>grande.</em>
-    </Remate>
-  </Frame>
-)
-
-const S9 = () => (
-  <Frame theme="dark" eyebrow="15 · COMUNIDAD" className="s9">
-    <div className="head">
+  <Frame theme="dark" eyebrow="13 · EL SISTEMA DETRÁS DEL TALENTO" className="s6">
+    <div className="s6-left">
       <h1 className="t t-lg">
-        La comunicación no termina cuando <em>publicas.</em>
+        El contenido es el motor. <em>El sistema multiplica su valor.</em>
       </h1>
-      <Lead>Una audiencia mira. Una comunidad participa. Y cuando participa empieza a darte información.</Lead>
-    </div>
-    <div className="ring r1">
-      <b>AUDIENCIA</b>
-      <span>mira</span>
-    </div>
-    <div className="ring r2">
-      <b>COMUNIDAD</b>
-      <span>participa</span>
-    </div>
-    <div className="ring r3">
-      <b>NEGOCIO</b>
-      <span>confía y actúa</span>
-    </div>
-    <span className="ring-arrow" style={{ left: 478 }}>→</span>
-    <span className="ring-arrow" style={{ left: 1052 }}>→</span>
-    <Remate className="remate-flow">
-      Escuchar → conversar → entender → conectar → <em>activar</em>
-    </Remate>
-  </Frame>
-)
-
-const S10 = () => (
-  <Frame theme="light" eyebrow="16 · SINERGIAS">
-    <div className="s10">
-      <div className="s10-left">
-        <h1 className="t t-lg">
-          Crecer también es saber con quién <em>conectar.</em>
-        </h1>
-        <Lead>La creatividad detrás del contenido también consiste en conectar activos.</Lead>
-        <Remate>
-          Ver combinaciones es una habilidad estratégica: alguien tiene que convertir “podría pasar” en un proyecto real.
-        </Remate>
+      <Lead>
+        Un creador puede empezar publicando en una plataforma. Cuando crece, alrededor de su talento aparece un ecosistema completo que hay que conectar y dirigir.
+      </Lead>
+      <div className="s6-quote">
+        Mientras más crece el creador, menos puede depender solo de crear contenido. Necesita un <em>sistema</em> que conecte todo lo que ocurre alrededor de su talento.
       </div>
-      <div className="map">
-        <svg viewBox="0 0 900 760" className="map-lines" aria-hidden="true">
-          <g stroke="#F47358" strokeWidth="2" opacity="0.6" fill="none" strokeDasharray="2 9" strokeLinecap="round">
-            <line x1="450" y1="380" x2="170" y2="130" />
-            <line x1="450" y1="380" x2="730" y2="130" />
-            <line x1="450" y1="380" x2="170" y2="630" />
-            <line x1="450" y1="380" x2="730" y2="630" />
-          </g>
-        </svg>
-        <div className="map-center">
-          <b>CREADOR</b>
-          <span>posición + audiencia + confianza</span>
+      <div className="s6-bridge">
+        Y cada uno de esos bloques necesita personas: estrategas, productores, operadores, community leads, comerciales, analistas, managers, financieros, abogados, especialistas en partnerships. <b>Ahí aparecen las carreras dentro de la Creator Economy.</b>
+      </div>
+    </div>
+    <div className="eco-rings" />
+    {eco.map(([a, b], i) => (
+      <div key={a} className={`eco-node en${i}`}>
+        <b>{a}</b>
+        <span>{b}</span>
+      </div>
+    ))}
+    <div className="eco-core">
+      <b>PERSONA / TALENTO</b>
+      <span>conocimiento · creatividad · reputación · confianza</span>
+    </div>
+    <div className="eco-content">
+      <b>CONTENIDO</b>
+      <span>YouTube · TikTok · Instagram · LinkedIn · Podcast · Newsletter · Streaming</span>
+    </div>
+    <div className="logic">
+      {logica.map(([a, b, c], i) => (
+        <div className="lg-wrap" key={a}>
+          {i > 0 && <i>→</i>}
+          <div className={`lg-card ${i === 2 ? 'hot' : ''}`}>
+            <span className="small-label">{a}</span>
+            <strong>{b}</strong>
+            <p>{c}</p>
+          </div>
         </div>
-        <div className="map-node n1"><b>MARCA</b><span>partnership</span></div>
-        <div className="map-node n2"><b>OTRO CREADOR</b><span>colaboración</span></div>
-        <div className="map-node n3"><b>EXPERTO</b><span>producto</span></div>
-        <div className="map-node n4"><b>MEDIO / EVENTO</b><span>nueva audiencia</span></div>
-      </div>
+      ))}
     </div>
   </Frame>
 )
 
-const S11 = () => (
-  <Frame theme="dark" eyebrow="17 · EL TRABAJO INVISIBLE" className="s11">
-    <div className="s11-left">
-      <h1 className="t t-xl">
-        Management &amp; <em>operaciones.</em>
-      </h1>
-      <Lead>El crecimiento crea complejidad. Gestionar es convertir esa complejidad en decisiones, responsables y proyectos.</Lead>
+const pasosM = [
+  ['DETECTAR', '¿vale la pena?'],
+  ['PRIORIZAR', '¿encaja con la estrategia?'],
+  ['NEGOCIAR', '¿qué gana cada parte?'],
+  ['DISEÑAR', '¿cómo se convierte en proyecto?'],
+  ['OPERAR', '¿quién hace qué y cuándo?'],
+  ['MEDIR', '¿generó valor?'],
+]
+
+const SM = () => (
+  <Frame theme="light" eyebrow="15 · DETECTAR Y CONVERTIR VALOR" className="sM">
+    <h1 className="t t-lg sM-title">
+      Las oportunidades <em>no se ejecutan solas.</em>
+    </h1>
+    <div className="sM-l">
+      <span className="small-label">PARTE 1 · DETECTAR VALOR</span>
+      <p className="sM-h">Crecer no es aceptar más oportunidades. Es aprender a reconocer cuáles multiplican valor.</p>
+      <p className="sM-c">Ver conexiones es estrategia. Elegir cuáles construir requiere criterio.</p>
     </div>
-    <blockquote className="quote">
-      “El creador no debería administrar personalmente todo lo que su <em>crecimiento</em> genera.”
-    </blockquote>
-    <div className="blob" />
-    <Cut src="karla-4.png" />
-    <ul className="verbs">
-      {['PRIORIZAR', 'CONECTAR', 'NEGOCIAR', 'ORGANIZAR', 'DIRIGIR'].map((v) => (
-        <li key={v}>{v}</li>
+    <div className="hub">
+      <svg viewBox="0 0 820 340" className="hub-lines" aria-hidden="true">
+        <g stroke="#F47358" strokeWidth="2" opacity="0.6" strokeDasharray="2 9" strokeLinecap="round" fill="none">
+          <line x1="410" y1="195" x2="135" y2="60" />
+          <line x1="410" y1="195" x2="685" y2="60" />
+          <line x1="410" y1="195" x2="135" y2="285" />
+          <line x1="410" y1="195" x2="685" y2="285" />
+          <line x1="410" y1="195" x2="410" y2="45" />
+        </g>
+      </svg>
+      <div className="hub-c">
+        <b>CREADOR</b>
+        <span>audiencia · confianza · posicionamiento</span>
+      </div>
+      <div className="hub-n h1"><b>MARCA</b><span>distribución / partnership</span></div>
+      <div className="hub-n h2"><b>OTRO CREADOR</b><span>nuevas audiencias / formatos</span></div>
+      <div className="hub-n h3"><b>EXPERTO</b><span>conocimiento / producto</span></div>
+      <div className="hub-n h4"><b>MEDIO O EVENTO</b><span>reputación / exposición</span></div>
+      <div className="hub-n h5"><b>EMPRESA</b><span>nuevos modelos de negocio</span></div>
+    </div>
+    <div className="sM-r">
+      <span className="small-label">PARTE 2 · CONVERTIR VALOR</span>
+      <p className="sM-h">Una oportunidad todavía no es un proyecto.</p>
+      <p className="sM-b">Alguien tiene que convertir el “podríamos hacer algo juntos” en una decisión, un acuerdo, un presupuesto, responsables y ejecución.</p>
+    </div>
+    <div className="seq">
+      {pasosM.map(([a, b], i) => (
+        <div key={a} className={`seq-i ${i === 5 ? 'hot' : ''}`}>
+          <em>{String(i + 1).padStart(2, '0')}</em>
+          <div>
+            <b>{a}</b>
+            <span>{b}</span>
+          </div>
+        </div>
       ))}
-      <li className="verb-last">CONVERTIR OPORTUNIDADES EN PROYECTOS</li>
-    </ul>
+    </div>
+    <div className="sM-strip">
+      <p className="s1">Management es transformar oportunidades dispersas en proyectos que sí construyen negocio.</p>
+      <p className="s2">
+        No todas las carreras dentro de la Creator Economy ocurren frente a una cámara. Algunas consisten en ver posibilidades que otros no ven y <em>convertirlas en realidad.</em>
+      </p>
+      <div className="tagsrow">
+        {['Partnerships', 'Business Development', 'Talent Management', 'Project Management', 'Operaciones', 'Comercial', 'Producción ejecutiva', 'Estrategia'].map((t) => (
+          <span key={t}>{t}</span>
+        ))}
+      </div>
+    </div>
   </Frame>
 )
 
 const cats = [
-  ['ATENCIÓN', 'Publicidad · Brand deals · Afiliados'],
-  ['CONOCIMIENTO', 'Cursos · Servicios · Consultoría · Conferencias'],
-  ['COMUNIDAD', 'Eventos · Experiencias · Membresías'],
-  ['PROPIEDAD', 'Productos · Marcas · Libros / IP'],
+  ['ATENCIÓN', 'Monetizar alcance', 'Publicidad · Brand deals · Afiliados · Revenue de plataformas'],
+  ['CONOCIMIENTO', 'Monetizar expertise', 'Servicios · Consultoría · Cursos · Conferencias · Workshops'],
+  ['COMUNIDAD', 'Monetizar pertenencia y acceso', 'Membresías · Eventos · Experiencias · Suscripciones'],
+  ['PROPIEDAD', 'Monetizar activos', 'Productos · Marcas · Formatos · Libros · Licencias · IP'],
 ]
 
 const S12 = () => (
-  <Frame theme="light" eyebrow="18 · MONETIZACIÓN" className="s12">
+  <Frame theme="light" eyebrow="14 · MONETIZACIÓN" className="s12">
     <div className="head">
-      <h1 className="t t-xl">
-        ¿Dónde aparece el <em>negocio?</em>
+      <h1 className="t t-lg">
+        ¿Dónde aparece el negocio? <em>La atención no es el negocio. Es la materia prima.</em>
       </h1>
-      <Lead>
-        No es “cómo hacer plata siendo influencer”. Es cuántos negocios pueden existir alrededor de atención + confianza.
-      </Lead>
+      <Lead>El negocio aparece cuando el valor, la confianza y el conocimiento encuentran una forma de capturarse.</Lead>
     </div>
     <div className="cats">
-      {cats.map(([a, b], i) => (
+      {cats.map(([a, s, b], i) => (
         <div className={`cat c${i}`} key={a}>
           <span className="cat-n">{String(i + 1).padStart(2, '0')}</span>
           <b>{a}</b>
+          <i>{s}</i>
           <p>{b}</p>
         </div>
       ))}
     </div>
     <Remate>
-      Cada nueva línea de negocio aumenta la necesidad de estrategia, comunidad, management y <em>operaciones.</em>
+      Mientras más formas de capturar valor construyes, más necesitas <em>sistemas</em> para sostenerlas.
+      <span className="rem-tags">Estrategia · Editorial · Comunidad · Comercial · Finanzas · Operaciones · Management</span>
     </Remate>
   </Frame>
 )
 
 const S13 = () => (
-  <Frame theme="light" eyebrow="19 · CASO APLICADO" className="s13">
+  <Frame theme="light" eyebrow="16 · CASO APLICADO" className="s13">
     <div className="blob" />
     <Cut src="daniel.png" />
     <Float className="d1">Daniel Bonifaz</Float>
@@ -693,33 +653,38 @@ const S13 = () => (
 )
 
 
-const entradas = [
-  ['ESTRATEGIA DE CONTENIDO', 'pensar · investigar · posicionar · comunicar · crecer'],
-  ['COMUNIDAD', 'escuchar · conversar · entender personas · conectar'],
-  ['MANAGEMENT & OPERACIONES', 'priorizar · negociar · organizar · coordinar · dirigir'],
-  ['FRENTE AL CONTENIDO', 'cámara · edición · producción · dirección creativa'],
+const caminos = [
+  ['DIRECCIÓN ESTRATÉGICA DE NEGOCIO', 'Decidir qué construir y hacia dónde crecer.', 'Modelo de negocio · monetización · nuevas líneas · partnerships · posicionamiento · crecimiento', 'Business Strategist · Growth · Business Development · Partnerships · Creator Business Director'],
+  ['MANAGEMENT & OPERACIONES', 'Convertir oportunidades en proyectos que sí funcionan.', 'Priorizar · negociar · coordinar · presupuestar · organizar equipos · procesos · ejecución', 'Talent Manager · Project Manager · Operations Manager · Account Manager · Chief of Staff'],
+  ['PRODUCCIÓN', 'Convertir una idea en una experiencia que la audiencia pueda consumir.', 'Producción audiovisual · dirección creativa · edición · fotografía · sonido · eventos · streaming', 'Producer · Creative Producer · Director · Editor · Production Manager'],
+  ['ESTRATEGIA DE CONTENIDO', 'Convertir conocimiento, talento e ideas en atención y autoridad.', 'Investigación · narrativa · formatos · guiones · distribución · análisis · posicionamiento editorial', 'Content Strategist · Editorial Strategist · Copywriter · Scriptwriter · Social Media Strategist'],
 ]
 
 const S14 = () => (
-  <Frame theme="light" eyebrow="20 · TU ENTRADA A LA INDUSTRIA" className="s14">
-    <div className="s14-left">
-      <h1 className="t t-xl">
-        ¿Dónde podrías entrar <em>tú?</em>
+  <Frame theme="light" eyebrow="17 · TU ENTRADA A LA INDUSTRIA" className="s14">
+    <div className="s14-top">
+      <h1 className="t t-lg">
+        ¿Dónde podrías construir carrera <em>tú?</em>
       </h1>
-      <Lead>No tienes que querer ser creador para que esta industria sea para ti.</Lead>
+      <Lead>No necesitas ser creador para trabajar en esta industria. Puedes construir carrera haciendo que el talento se convierta en negocio.</Lead>
     </div>
-    <div className="entradas">
-      {entradas.map(([a, b]) => (
-        <div className="entrada" key={a}>
-          <b>{a}</b>
-          <p>{b}</p>
+    <div className="paths">
+      {caminos.map(([a, b, c, d], i) => (
+        <div className="path" key={a}>
+          <span className="path-n">{String(i + 1).padStart(2, '0')}</span>
+          <div>
+            <b>{a}</b>
+            <p className="p-solve">{b}</p>
+            <p className="p-does">{c}</p>
+            <p className="p-roles">
+              <u>Roles posibles</u> {d}
+            </p>
+          </div>
         </div>
       ))}
     </div>
-    <div className="blob" />
-    <Cut src="karla-2.png" />
     <Remate>
-      Empieza identificando qué problemas disfrutas resolver. Esa puede ser una mejor <em>brújula</em> que intentar adivinar tu cargo.
+      No empieces preguntándote qué cargo quieres. Identifica qué parte del sistema disfrutas construir: tu lugar puede estar en <em>generar valor, capturarlo o hacer que escale.</em>
     </Remate>
   </Frame>
 )
@@ -727,6 +692,8 @@ const S14 = () => (
 const S15 = () => (
   <Frame theme="dark" className="closing" chrome={false}>
     <div className="close-panel" />
+    <div className="blob" />
+    <Cut src="karla-1.png" />
     <div className="close-brand">
       <span>KARLA</span> RODRÍGUEZ
     </div>
@@ -747,7 +714,9 @@ const S15 = () => (
       <p className="close-final">
         Tu carrera puede estar frente al contenido o construyendo todo lo que existe <em>detrás.</em>
       </p>
-      <div className="close-foot">Karla Rodríguez · @karlarodriguez · karla@matizuno.com</div>
+      <div className="close-foot">
+        <Socials /> @karlarodrik · karla@matizuno.com
+      </div>
     </div>
   </Frame>
 )
@@ -780,4 +749,4 @@ const S20 = () => (
   </Frame>
 )
 
-export const SLIDES: (() => ReactNode)[] = [S1, S_P, S_D3, S_D4, S_D5, S_D6, S_D7, S_E, S4, S2, S3, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S20]
+export const SLIDES: (() => ReactNode)[] = [S1, S_P, S_D3, S_D4, S_D5, S_D6, S_D7, S_E, S4, S2, S3, S5, S6, S12, SM, S13, S14, S15, S20]
