@@ -5,7 +5,7 @@ import PptxGenJS from 'pptxgenjs'
 import { mkdirSync, writeFileSync } from 'node:fs'
 
 const URL = process.argv[2] || 'http://localhost:5173'
-const NAME = 'Karla_USIL_Creator_Economy_15slides'
+const NAME = 'Karla_USIL_Creator_Economy'
 const OUT = 'public/downloads'
 mkdirSync(OUT, { recursive: true })
 

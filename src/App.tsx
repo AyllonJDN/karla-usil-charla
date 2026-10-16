@@ -6,7 +6,7 @@ import { SLIDES } from './slides'
 const W = 1920
 const H = 1080
 const BASE = import.meta.env.BASE_URL
-const FILE_NAME = 'Karla_USIL_Creator_Economy_15slides'
+const FILE_NAME = 'Karla_USIL_Creator_Economy'
 const PDF_URL = `${BASE}downloads/${FILE_NAME}.pdf`
 const PPTX_URL = `${BASE}downloads/${FILE_NAME}.pptx`
 const TOTAL = SLIDES.length

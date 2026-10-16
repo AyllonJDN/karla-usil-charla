@@ -325,3 +325,83 @@ em { font-style: italic; font-weight: 500; }
 }
 
 .logos img[alt="USIL"] { border-radius: 14px; height: 110px; }
+
+/* ---------- Apertura: humano + empresarial ---------- */
+.sA-left { position: absolute; left: 110px; top: 150px; width: 800px; }
+.sA .t-xl { font-size: 106px; }
+.sA .lead { font-size: 30px; max-width: 740px; }
+.sA-remate { position: absolute; left: 110px; top: 740px; width: 780px; margin: 0; font-size: 36px; padding: 22px 32px; background: var(--grad); color: var(--cream); border: 0; box-shadow: var(--shadow); }
+.sA-remate em { color: #ffe2d9; }
+.venn { position: absolute; top: 260px; width: 540px; height: 540px; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; z-index: 2; }
+.venn b { font-size: 24px; letter-spacing: 0.2em; font-weight: 800; }
+.venn span { font-family: var(--serif); font-style: italic; font-size: 38px; line-height: 1.15; margin-top: 10px; }
+.v1 { left: 940px; background: var(--grad); color: var(--cream); padding: 0 230px 0 60px; box-shadow: var(--shadow); }
+.v1 b { color: #ffd3c6; }
+.v2 { left: 1270px; background: rgba(196, 211, 247, 0.55); border: 2px solid var(--coral); padding: 0 60px 0 230px; text-align: right; align-items: flex-end; }
+.v2 b { color: var(--coral); }
+.vc { left: 1210px; top: 530px; transform: translate(-50%, -50%); white-space: normal; text-align: center; width: 230px; font-size: 28px; padding: 18px 22px; z-index: 6; }
+
+/* ---------- Era de la IA ---------- */
+.sB-left { position: absolute; left: 110px; top: 150px; width: 1020px; height: 810px; display: flex; flex-direction: column; }
+.sB .t-xl { font-size: 108px; }
+.sB-answer { font-family: var(--serif); font-style: italic; font-size: 72px; color: #ff9b84; margin: 26px 0 0; line-height: 1.05; }
+.sB .lead { font-size: 30px; margin-top: 22px; }
+.sB-chain { display: flex; align-items: center; gap: 18px; margin-top: 26px; }
+.sB-chain span { padding: 18px 34px; border-radius: 28px; border: 1.5px solid rgba(196, 211, 247, 0.5); background: rgba(255, 255, 255, 0.07); font-size: 28px; font-weight: 800; font-style: italic; }
+.sB-chain span.hot { background: var(--grad); border-color: transparent; box-shadow: 0 20px 44px rgba(0, 0, 0, 0.3); }
+.sB-chain i { font-style: normal; font-size: 40px; color: #ff8d72; }
+.sB .remate { font-size: 40px; max-width: 760px; }
+.sB .blob { width: 640px; height: 640px; left: 1190px; top: 330px; }
+.sB .cut { height: 900px; left: 1160px; }
+
+/* ---------- Esencia + operaciones ---------- */
+.sC-left { position: absolute; left: 110px; top: 150px; width: 820px; }
+.sC .t-lg { font-size: 90px; }
+.sC .lead { font-size: 29px; max-width: 760px; }
+.layers { position: absolute; left: 110px; top: 640px; width: 820px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.layer { height: 82px; border-radius: 26px; display: flex; align-items: center; justify-content: center; font-size: 25px; font-weight: 800; letter-spacing: 0.16em; border: 1.5px solid rgba(244, 115, 88, 0.6); background: rgba(255, 255, 255, 0.7); }
+.l3 { width: 480px; } .l2 { width: 650px; }
+.l1 { width: 820px; background: var(--grad); color: var(--cream); border-color: transparent; box-shadow: var(--shadow); }
+.vs { position: absolute; left: 1030px; top: 270px; width: 780px; display: flex; flex-direction: column; gap: 30px; }
+.vs .cmp-new { margin-left: 0; }
+.vs .cmp p { font-size: 54px; }
+
+/* ---------- Caso: resultado ---------- */
+.s13b .blob { width: 700px; height: 700px; left: 1140px; top: 300px; }
+.s13b .cut { height: 820px; left: 1090px; }
+.s13b-left { position: absolute; left: 110px; top: 150px; width: 940px; height: 820px; display: flex; flex-direction: column; }
+.s13b .t-xl { font-size: 108px; }
+.bub-big { margin-top: 30px; display: flex; align-items: center; gap: 36px; padding: 22px 48px; border-radius: 40px; border: 1.5px solid rgba(244, 115, 88, 0.55); background: rgba(255, 255, 255, 0.75); }
+.bub-big b { font-family: var(--serif); font-weight: 600; font-size: 132px; line-height: 1; color: var(--coral); }
+.bub-big span { font-size: 30px; line-height: 1.25; max-width: 330px; font-weight: 600; }
+.became { margin-top: 22px; padding: 28px 44px 32px; border-radius: 40px; background: var(--grad); color: var(--cream); box-shadow: var(--shadow); }
+.became .small-label { color: #ffd3c6; }
+.became p { font-family: var(--serif); font-style: italic; font-size: 40px; margin: 12px 0 4px; }
+.became strong { display: block; font-family: var(--serif); font-weight: 500; font-size: 52px; line-height: 1.1; }
+.s13b .remate { margin-top: auto; font-size: 32px; padding: 20px 30px; }
+
+/* ---------- Final: contacto ---------- */
+.final { background: linear-gradient(135deg, #2a0615 0%, #470b24 60%, #7a1c3a 100%); }
+.final .slide-body { padding: 0; }
+.final-panel { position: absolute; right: 0; top: 0; width: 740px; height: 1080px; background: var(--grad); z-index: 1; }
+.final .blob { width: 620px; height: 620px; left: 1240px; top: 320px; background: linear-gradient(160deg, rgba(255, 226, 217, 0.35), rgba(255, 255, 255, 0.05)); }
+.final .cut { height: 900px; left: 1230px; }
+.final .close-brand { left: 110px; }
+.final-body { position: absolute; left: 110px; top: 150px; width: 1000px; z-index: 3; }
+.final .t-xl { font-size: 118px; }
+.final .lead { font-size: 32px; }
+.qr-row { display: flex; gap: 50px; align-items: center; margin-top: 50px; }
+.qr-card { width: 400px; height: 400px; padding: 20px; border-radius: 40px; background: #fff; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4); flex: none; }
+.qr-card img { width: 100%; height: 100%; display: block; }
+.qr-side { display: flex; flex-direction: column; gap: 16px; }
+.qr-side p { font-family: var(--serif); font-style: italic; font-size: 48px; line-height: 1.1; margin: 0; max-width: 460px; }
+.qr-side .close-foot { margin-top: 12px; font-size: 26px; font-weight: 600; }
+
+/* ajustes nuevas slides */
+.venn { justify-content: flex-start; padding-top: 95px; }
+.venn b { font-size: 20px; letter-spacing: 0.14em; }
+.vc { top: 650px; }
+.sB .t { text-wrap: balance; }
+.sC .layers { top: 560px; }
+.sC .vs { top: 300px; }
+.s13b .mark-logo { filter: brightness(0) invert(1); }

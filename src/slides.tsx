@@ -89,6 +89,84 @@ const S1 = () => (
   </Frame>
 )
 
+
+const S_A = () => (
+  <Frame theme="light" eyebrow="01 · UN NEGOCIO HUMANO Y EMPRESARIAL" className="sA">
+    <div className="sA-left">
+      <h1 className="t t-xl">
+        Es una industria de <em>operaciones.</em>
+      </h1>
+      <Lead>
+        Pero antes de llegar a las operaciones, quiero que entiendan algo: es un negocio donde se trabaja mucho el lado humano y el lado empresarial.
+      </Lead>
+    </div>
+    <div className="venn v1">
+      <b>LO HUMANO</b>
+      <span>esencia · confianza · conexión</span>
+    </div>
+    <div className="venn v2">
+      <b>LO EMPRESARIAL</b>
+      <span>estrategia · negocio · operaciones</span>
+    </div>
+    <Float className="vc">Creación de contenido</Float>
+    <Remate className="sA-remate">
+      Las operaciones llegan después. Primero hay que entender los <em>dos lados.</em>
+    </Remate>
+  </Frame>
+)
+
+const S_B = () => (
+  <Frame theme="dark" eyebrow="02 · LA ERA DE LA IA" className="sB">
+    <div className="sB-left">
+      <h1 className="t t-xl">
+        ¿Qué falta en la era de la <em>IA?</em>
+      </h1>
+      <p className="sB-answer">Justamente lo humano.</p>
+      <Lead>Por eso la creación de contenido hoy radica en esto:</Lead>
+      <div className="sB-chain">
+        <span>Autenticidad</span>
+        <i>→</i>
+        <span>Conexión</span>
+        <i>→</i>
+        <span className="hot">Crecimiento</span>
+      </div>
+      <Remate>
+        Cuanto más <em>auténtico</em> eres, más conectas y creces.
+      </Remate>
+    </div>
+    <div className="blob" />
+    <Cut src="karla-3.png" />
+  </Frame>
+)
+
+const S_C = () => (
+  <Frame theme="light" eyebrow="03 · PRIMERO LA ESENCIA" className="sC">
+    <div className="sC-left">
+      <h1 className="t t-lg">
+        Partimos de la esencia <em>humana.</em>
+      </h1>
+      <Lead>Teniendo eso como base, podemos trabajar todo lo demás, incluidas las operaciones.</Lead>
+    </div>
+    <div className="layers">
+      <div className="layer l3">OPERACIONES</div>
+      <div className="layer l2">ESTRATEGIA Y COMUNIDAD</div>
+      <div className="layer l1">ESENCIA HUMANA</div>
+    </div>
+    <div className="vs">
+      <div className="cmp cmp-old">
+        <span className="small-label">UNA EMPRESA TRADICIONAL</span>
+        <p>se gestiona como empresa.</p>
+      </div>
+      <div className="cmp cmp-new">
+        <span className="small-label">UNA EMPRESA DE MEDIOS</span>
+        <p>
+          el activo principal es <em>una persona.</em>
+        </p>
+      </div>
+    </div>
+  </Frame>
+)
+
 const territorios = [
   ['ESTRATEGIA', 'decidir qué construir'],
   ['GESTIÓN', 'hacer que funcione'],
@@ -97,7 +175,7 @@ const territorios = [
 ]
 
 const S2 = () => (
-  <Frame theme="light" eyebrow="01 · QUIÉN ESTÁ HABLANDO" className="s2">
+  <Frame theme="light" eyebrow="04 · QUIÉN ESTÁ HABLANDO" className="s2">
     <div className="s2-left">
       <h1 className="t t-lg">
         Yo tampoco estudié <em>Creator Economy.</em>
@@ -127,7 +205,7 @@ const S2 = () => (
 )
 
 const S3 = () => (
-  <Frame theme="light" eyebrow="02 · UNA MEJOR PREGUNTA" className="s3">
+  <Frame theme="light" eyebrow="05 · UNA MEJOR PREGUNTA" className="s3">
     <div className="s3-left">
       <h1 className="t t-xl">
         Tu carrera te da <em>herramientas.</em>
@@ -157,7 +235,7 @@ const S3 = () => (
 )
 
 const S4 = () => (
-  <Frame theme="dark" eyebrow="03 · LA OPORTUNIDAD YA EXISTE" className="s4">
+  <Frame theme="dark" eyebrow="06 · LA OPORTUNIDAD YA EXISTE" className="s4">
     <div className="s4-top">
       <h1 className="t t-xl">
         Esto ya es una <em>industria.</em>
@@ -194,7 +272,7 @@ const S4 = () => (
 )
 
 const S5 = () => (
-  <Frame theme="light" eyebrow="04 · AMPLIAR EL MAPA" className="s5">
+  <Frame theme="light" eyebrow="07 · AMPLIAR EL MAPA" className="s5">
     <div className="s5-left">
       <h1 className="t t-lg">
         Trabajar en contenido no significa ser <em>creador.</em>
@@ -241,7 +319,7 @@ const pasos = [
 ]
 
 const S6 = () => (
-  <Frame theme="dark" eyebrow="05 · LA SLIDE MADRE" className="s6">
+  <Frame theme="dark" eyebrow="08 · LA SLIDE MADRE" className="s6">
     <div className="head">
       <h1 className="t t-xl">
         El sistema detrás del <em>talento.</em>
@@ -269,7 +347,7 @@ const roles = [
 ]
 
 const S7 = () => (
-  <Frame theme="light" eyebrow="06 · ANTES DE PUBLICAR">
+  <Frame theme="light" eyebrow="09 · ANTES DE PUBLICAR">
     <div className="s7">
       <div className="s7-left">
         <h1 className="t t-lg">
@@ -301,7 +379,7 @@ const preguntas = [
 ]
 
 const S8 = () => (
-  <Frame theme="light" eyebrow="07 · DIRIGIR CONTENIDO">
+  <Frame theme="light" eyebrow="10 · DIRIGIR CONTENIDO">
     <div className="s8">
       <div className="s8-left">
         <h1 className="t t-md">
@@ -333,7 +411,7 @@ const S8 = () => (
 )
 
 const S9 = () => (
-  <Frame theme="dark" eyebrow="08 · COMUNIDAD" className="s9">
+  <Frame theme="dark" eyebrow="11 · COMUNIDAD" className="s9">
     <div className="head">
       <h1 className="t t-lg">
         La comunicación no termina cuando <em>publicas.</em>
@@ -361,7 +439,7 @@ const S9 = () => (
 )
 
 const S10 = () => (
-  <Frame theme="light" eyebrow="09 · SINERGIAS">
+  <Frame theme="light" eyebrow="12 · SINERGIAS">
     <div className="s10">
       <div className="s10-left">
         <h1 className="t t-lg">
@@ -395,7 +473,7 @@ const S10 = () => (
 )
 
 const S11 = () => (
-  <Frame theme="dark" eyebrow="10 · EL TRABAJO INVISIBLE" className="s11">
+  <Frame theme="dark" eyebrow="13 · EL TRABAJO INVISIBLE" className="s11">
     <div className="s11-left">
       <h1 className="t t-xl">
         Management &amp; <em>operaciones.</em>
@@ -424,7 +502,7 @@ const cats = [
 ]
 
 const S12 = () => (
-  <Frame theme="light" eyebrow="11 · MONETIZACIÓN" className="s12">
+  <Frame theme="light" eyebrow="14 · MONETIZACIÓN" className="s12">
     <div className="head">
       <h1 className="t t-xl">
         ¿Dónde aparece el <em>negocio?</em>
@@ -449,7 +527,7 @@ const S12 = () => (
 )
 
 const S13 = () => (
-  <Frame theme="light" eyebrow="12 · CASO APLICADO" className="s13">
+  <Frame theme="light" eyebrow="15 · CASO APLICADO" className="s13">
     <div className="blob" />
     <Cut src="daniel.png" />
     <Float className="d1">Daniel Bonifaz</Float>
@@ -473,6 +551,28 @@ const S13 = () => (
           <p>Equipo · oferta · alianzas · procesos · decisiones</p>
         </div>
       </div>
+    </div>
+  </Frame>
+)
+
+
+const S13b = () => (
+  <Frame theme="light" eyebrow="16 · CASO APLICADO · RESULTADO" className="s13b">
+    <div className="blob" />
+    <Cut src="daniel.png" />
+    <div className="s13b-left">
+      <h1 className="t t-xl">
+        Tres años <em>después.</em>
+      </h1>
+      <div className="bub-big">
+        <b>+350%</b>
+        <span>crecimiento de la facturación</span>
+      </div>
+      <div className="became">
+        <span className="small-label">EL RESULTADO MÁS IMPORTANTE</span>
+        <p>Daniel se convirtió en:</p>
+        <strong>content founder, creator, padre y esposo presente.</strong>
+      </div>
       <Remate>
         El contenido genera oportunidades. Pero las oportunidades por sí solas no construyen una <em>empresa.</em>
       </Remate>
@@ -488,7 +588,7 @@ const entradas = [
 ]
 
 const S14 = () => (
-  <Frame theme="light" eyebrow="13 · TU ENTRADA A LA INDUSTRIA" className="s14">
+  <Frame theme="light" eyebrow="17 · TU ENTRADA A LA INDUSTRIA" className="s14">
     <div className="s14-left">
       <h1 className="t t-xl">
         ¿Dónde podrías entrar <em>tú?</em>
@@ -542,4 +642,33 @@ const S15 = () => (
   </Frame>
 )
 
-export const SLIDES: (() => ReactNode)[] = [S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15]
+
+const S20 = () => (
+  <Frame theme="dark" className="final" chrome={false}>
+    <div className="final-panel" />
+    <div className="blob" />
+    <Cut src="karla-5.png" />
+    <div className="close-brand">
+      <span>KARLA</span> RODRÍGUEZ
+    </div>
+    <div className="cover-year">2026</div>
+    <div className="final-body">
+      <h1 className="t t-xl">
+        Sigamos en <em>contacto.</em>
+      </h1>
+      <Lead>Escanea el QR para seguirme en Instagram.</Lead>
+      <div className="qr-row">
+        <div className="qr-card">
+          <img src={img('qr-instagram.png')} alt="QR Instagram" />
+        </div>
+        <div className="qr-side">
+          <span className="small-label">INSTAGRAM</span>
+          <p>Escanea y sigue la conversación.</p>
+          <div className="close-foot">karla@matizuno.com</div>
+        </div>
+      </div>
+    </div>
+  </Frame>
+)
+
+export const SLIDES: (() => ReactNode)[] = [S1, S_A, S_B, S_C, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S13b, S14, S15, S20]
