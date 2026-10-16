@@ -215,8 +215,6 @@ const S3 = () => (
         <span key={c}>{c}</span>
       ))}
     </div>
-    <div className="blob" />
-    <Cut src="karla-3.png" />
     <div className="compare">
       <div className="cmp cmp-old">
         <span className="small-label">LA PREGUNTA TRADICIONAL</span>
@@ -602,8 +600,6 @@ const S14 = () => (
 const S15 = () => (
   <Frame theme="dark" className="closing" chrome={false}>
     <div className="close-panel" />
-    <div className="blob" />
-    <Cut src="karla-1.png" />
     <div className="close-brand">
       <span>KARLA</span> RODRÍGUEZ
     </div>
