@@ -1030,3 +1030,72 @@ em { font-style: italic; font-weight: 500; }
 .pp1 img { object-fit: cover; object-position: 50% 0; width: 170px; left: 0; }
 .s5 .remate { top: 700px; }
 .pp1 .p-disc { background: linear-gradient(160deg, #f47358, #8f2447); border: 0; } .s5 .remate { top: 640px; }
+
+/* ===== ronda 8 ===== */
+.vn { width: 700px; height: 700px; top: 190px; }
+.vn1 { left: 770px; } .vn2 { left: 1190px; }
+.vt { top: 470px; }
+.vt1 { left: 790px; width: 380px; } .vt2 { left: 1490px; width: 380px; }
+.vt3 { left: 1190px; width: 280px; top: 500px; }
+.vt b { font-size: 30px; } .vt span { font-size: 58px; line-height: 1.15; }
+.vt3 b { font-size: 25px; letter-spacing: 0.05em; line-height: 1.5; }
+.sE1 .sE-left { width: 600px; }
+
+.sE3 .slide-body { align-items: center; justify-content: center; text-align: center; gap: 70px; }
+.sE3-t { font-size: 88px; max-width: 1500px; line-height: 1.08; }
+.sE3-t em { color: var(--coral); }
+.sE3-cards { display: flex; gap: 40px; width: 1500px; }
+.sE3-cards .cmp { flex: 1; margin: 0; padding: 36px 44px; text-align: left; }
+.sE3-cards .cmp p { font-size: 54px; }
+
+.bub { width: 400px; height: 400px; background: linear-gradient(160deg, #dbe5fc, #c4d3f7); border: 0; color: var(--grape); box-shadow: 0 24px 50px rgba(0, 0, 0, 0.3); }
+.bub.hot { background: linear-gradient(160deg, #dbe5fc, #c4d3f7); }
+.bub .small-label, .hot .small-label { color: #7a1c3a; font-size: 18px; }
+.bub b { font-size: 70px; }
+.bub span:last-child { font-size: 24px; max-width: 300px; }
+.b1 { left: 930px; top: 150px; } .b2 { left: 1380px; top: 190px; } .b3 { left: 930px; top: 590px; } .b4 { left: 1380px; top: 620px; }
+
+.st.hot .box { background: rgba(196, 211, 247, 0.55); color: var(--grape); border: 2.5px solid #9db5ee; }
+
+.path { align-items: center; height: 250px; }
+.path b { font-size: 24px; }
+.p-solve { font-size: 36px; margin-top: 8px; }
+.p-roles { font-size: 23px; margin-top: 12px; font-weight: 600; }
+.path-n { font-size: 64px; align-self: center; }
+
+.s5 .remate { font-size: 48px; width: 800px; padding: 28px 36px; }
+
+
+/* ajustes legibilidad */
+.path { height: 275px; gap: 26px; }
+.path b { font-size: 28px; }
+.p-solve { font-size: 40px; line-height: 1.1; }
+.p-roles { font-size: 27px; }
+.path-n { font-size: 72px; }
+.s14 .remate { font-size: 40px; }
+.s12 .cat p { font-size: 28px; } .cat i { font-size: 31px; } .cat b { font-size: 40px; }
+.cat.c0 { height: 340px; } .cat.c1 { height: 380px; } .cat.c2 { height: 420px; } .cat.c3 { height: 460px; }
+.s12 .cats { height: 470px; }
+.orb-n { width: 220px; height: 220px; }
+.orb-n b { font-size: 20px; } .orb-n span { font-size: 29px; }
+.s5 .remate { width: 640px; }
+
+/* centrado automatico (medido) */
+.slide.sP .slide-body.safe { transform: translate(0px, 10px) scale(0.92); }
+.slide.sD3 .slide-body.safe { transform: translate(0px, -15px) scale(0.92); }
+.slide.sD4n .slide-body.safe { transform: translate(0px, -26px) scale(0.92); }
+.slide.sD7n .slide-body.safe { transform: translate(0px, 26px) scale(0.92); }
+.slide.sE1 .slide-body.safe { transform: translate(-37px, 15px) scale(0.92); }
+.slide.sE2 .slide-body.safe { transform: translate(0px, 13px) scale(0.92); }
+.slide.sE3 .slide-body.safe { transform: translate(0px, -2px) scale(0.92); }
+.slide.s4 .slide-body.safe { transform: translate(14px, -26px) scale(0.92); }
+.slide.sT1 .slide-body.safe { transform: translate(0px, -8px) scale(0.92); }
+.slide.sT2 .slide-body.safe { transform: translate(0px, 19px) scale(0.92); }
+.slide.sT3 .slide-body.safe { transform: translate(0px, 19px) scale(0.92); }
+.slide.s6a .slide-body.safe { transform: translate(0px, 3px) scale(0.92); }
+.slide.s6b .slide-body.safe { transform: translate(0px, -54px) scale(0.92); }
+.slide.s12 .slide-body.safe { transform: translate(0px, 15px) scale(0.92); }
+.slide.sMa .slide-body.safe { transform: translate(16px, 41px) scale(0.92); }
+.slide.sMb .slide-body.safe { transform: translate(0px, 44px) scale(0.92); }
+.slide.s14 .slide-body.safe { transform: translate(0px, 15px) scale(0.92); }
+.s5 .s5-left { top: 230px; } .s5 .remate { top: 720px; } .g-back { top: 210px; }

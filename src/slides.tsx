@@ -281,18 +281,16 @@ const S_E2 = () => (
 
 const S_E3 = () => (
   <Frame theme="light" eyebrow="10 · UN ACTIVO DISTINTO" className="sE3">
-    <div className="sE-left">
-      <h1 className="t t-xl">
-        No es lo mismo gestionar una empresa <em>de medios.</em>
-      </h1>
-    </div>
-    <div className="sD4-cards">
+    <h1 className="t sE3-t">
+      No es lo mismo gestionar una <em>empresa tradicional</em> que una <em>empresa de medios personal.</em>
+    </h1>
+    <div className="sE3-cards">
       <div className="cmp cmp-old">
         <span className="small-label">UNA EMPRESA TRADICIONAL</span>
         <p>Se gestiona como empresa.</p>
       </div>
       <div className="cmp cmp-new">
-        <span className="small-label">UNA EMPRESA DE MEDIOS</span>
+        <span className="small-label">UNA EMPRESA DE MEDIOS PERSONAL</span>
         <p>
           El activo principal es <em>una persona.</em>
         </p>
@@ -469,7 +467,7 @@ const SMa = () => (
     ].map(([a, b], i) => {
       const ang = (i * 72 - 90) * (Math.PI / 180)
       return (
-        <div key={a} className={`orb-n ${i % 2 === 0 ? '' : 'alt'}`} style={{ left: 1385 + 285 * Math.cos(ang) - 100, top: 540 + 285 * Math.sin(ang) - 100 }}>
+        <div key={a} className={`orb-n ${i % 2 === 0 ? '' : 'alt'}`} style={{ left: 1385 + 295 * Math.cos(ang) - 110, top: 540 + 295 * Math.sin(ang) - 110 }}>
           <b>{a}</b>
           <span>{b}</span>
         </div>
