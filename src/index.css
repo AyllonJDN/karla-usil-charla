@@ -435,3 +435,143 @@ em { font-style: italic; font-weight: 500; }
 .s13 .became p { font-size: 32px; margin: 8px 0 2px; }
 .s13 .became strong { font-size: 42px; }
 .s13 .remate { font-size: 28px; padding: 16px 26px; margin-top: auto; }
+
+/* ====== Reestructura: presentación, creator economy y nuevas slides ====== */
+
+/* 2 · Presentación */
+.sP-left { position: absolute; left: 110px; top: 150px; width: 800px; display: flex; flex-direction: column; }
+.sP .t-lg { font-size: 84px; }
+.sP-role { font-family: var(--serif); font-style: italic; font-size: 34px; color: var(--coral); margin: 8px 0 0; line-height: 1.1; }
+.sP-p { font-size: 25px; line-height: 1.42; margin: 20px 0 0; }
+.sP-p b { color: var(--coral); }
+.sP-card { margin-top: 18px; padding: 20px 28px; border-radius: 28px; background: var(--grad); color: var(--cream); font-size: 24px; line-height: 1.4; box-shadow: var(--shadow); }
+.sP-card b { color: #ffe2d9; }
+.sP .remate { margin-top: 18px; font-size: 29px; padding: 18px 28px; }
+.sP-logos { position: absolute; left: 950px; top: 140px; width: 860px; display: flex; gap: 46px; z-index: 4; }
+.lg-group { display: flex; flex-direction: column; gap: 14px; }
+.lg-row { display: flex; align-items: center; gap: 24px; height: 56px; }
+.lg-row img { display: block; width: auto; }
+.lg-ph { height: 46px; padding: 0 16px; display: flex; align-items: center; border: 2px dashed var(--coral); border-radius: 12px; color: var(--coral); font-size: 13px; font-weight: 800; letter-spacing: 0.14em; white-space: nowrap; }
+.sP-label { position: absolute; left: 950px; top: 330px; z-index: 4; }
+.person { position: absolute; width: 220px; height: 220px; z-index: 3; }
+.p-photo { position: absolute; inset: 0; clip-path: inset(-220px 0 0 0 round 0 0 110px 110px); }
+.p-disc { position: absolute; inset: 0; border-radius: 50%; background: var(--grad); }
+.person img { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); height: 390px; width: auto; max-width: none; }
+.p-name { position: absolute; left: 50%; bottom: -22px; transform: translateX(-50%); white-space: nowrap; padding: 8px 20px; border-radius: 22px; background: var(--cream); border: 1.5px solid rgba(244, 115, 88, 0.6); font-size: 20px; font-weight: 800; color: var(--grape); z-index: 5; box-shadow: 0 10px 24px rgba(71, 11, 36, 0.15); }
+.pp3 .p-disc, .pp5 .p-disc { background: linear-gradient(160deg, #f47358, #c4d3f7); }
+.pp1 .p-disc { background: rgba(255, 255, 255, 0.55); border: 3px dashed var(--coral); }
+.p-ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--coral); font-size: 22px; font-weight: 800; letter-spacing: 0.16em; line-height: 1.3; z-index: 2; }
+
+/* 3 · ¿Qué es la creator economy? */
+.sD3-left { position: absolute; left: 110px; top: 150px; width: 800px; height: 810px; display: flex; flex-direction: column; }
+.sD3 .t-xl { font-size: 100px; }
+.sD3 .lead { font-size: 29px; max-width: 760px; }
+.sD3 .remate { margin-top: auto; font-size: 40px; max-width: 760px; margin-bottom: 20px; }
+.sD3-disc { position: absolute; left: 1320px; top: 290px; width: 490px; height: 490px; border-radius: 50%; background: var(--grad); color: var(--cream); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: var(--shadow); z-index: 2; }
+.sD3-disc b { font-family: var(--serif); font-weight: 600; font-size: 84px; letter-spacing: 0.04em; line-height: 1; }
+.sD3-disc span { font-family: var(--serif); font-style: italic; font-size: 56px; margin-top: 6px; }
+.sD3 .fcard { font-size: 38px; padding: 22px 40px; }
+.sD3 .fcard::after { content: '→'; position: absolute; right: -52px; top: 50%; transform: translateY(-52%); color: var(--coral); font-size: 38px; font-style: normal; }
+.sD3 .f1 { left: 960px; top: 250px; } .sD3 .f2 { left: 1000px; top: 400px; } .sD3 .f3 { left: 960px; top: 550px; } .sD3 .f4 { left: 1000px; top: 700px; }
+
+/* 4 · Influencer marketing ≠ Creator Economy */
+.sD4-left { position: absolute; left: 110px; top: 150px; width: 800px; }
+.sD4 .t-xl { font-size: 98px; }
+.sD4 .lead { font-size: 29px; max-width: 700px; }
+.ring-big { position: absolute; left: 1060px; top: 190px; width: 700px; height: 700px; border-radius: 50%; background: var(--grad); color: var(--cream); padding: 110px 120px 0; text-align: center; box-shadow: var(--shadow); }
+.ring-big .small-label { color: #ffd3c6; }
+.ring-big p { font-family: var(--serif); font-size: 40px; line-height: 1.15; margin: 14px 0 0; }
+.ring-small { position: absolute; left: 1150px; top: 540px; width: 340px; height: 340px; border-radius: 50%; background: var(--cream); color: var(--grape); padding: 66px 36px 0; text-align: center; box-shadow: 0 24px 50px rgba(42, 6, 21, 0.35); z-index: 2; }
+.ring-small p { font-family: var(--serif); font-style: italic; font-size: 26px; line-height: 1.2; margin: 8px 0 0; }
+.ring-small .small-label { font-size: 15px; }
+
+/* 5 · La industria que convierte… */
+.sD5-pre { position: absolute; left: 110px; top: 160px; width: 1000px; margin: 0; font-family: var(--serif); font-size: 62px; line-height: 1.08; }
+.sD5-words { position: absolute; left: 110px; top: 340px; display: flex; flex-direction: column; gap: 6px; }
+.sD5-words div { display: flex; align-items: center; gap: 26px; }
+.sD5-words i { width: 22px; height: 22px; border-radius: 50%; background: var(--coral); flex: none; }
+.sD5-words span { font-family: var(--serif); font-style: italic; font-size: 112px; line-height: 1.06; }
+.sD5-words div:nth-child(odd) span { color: var(--cream); }
+.sD5-words div:nth-child(even) span { color: #ff9b84; }
+.sD5-orb { position: absolute; left: 1180px; top: 270px; width: 600px; height: 600px; border-radius: 50%; background: var(--grad); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4); }
+.sD5-orb span { font-family: var(--serif); font-style: italic; font-size: 48px; }
+.sD5-orb b { font-family: var(--serif); font-weight: 500; font-size: 84px; line-height: 1.05; margin-top: 6px; max-width: 460px; }
+
+/* 6 · Pregunta */
+.sD6 .close-panel { width: 700px; }
+.sD6 .blob { width: 600px; height: 600px; left: 50px; top: 330px; background: linear-gradient(160deg, rgba(255, 226, 217, 0.35), rgba(255, 255, 255, 0.05)); }
+.sD6 .cut { height: 900px; left: 0; }
+.sD6 .close-brand { left: 780px; }
+.eyebrow-r { position: absolute; top: 56px; right: 110px; font-size: 19px; font-weight: 700; letter-spacing: 0.24em; color: var(--peri); z-index: 3; }
+.sD6-body { position: absolute; left: 780px; right: 110px; top: 190px; bottom: 120px; display: flex; flex-direction: column; justify-content: center; z-index: 3; }
+.sD6-q { position: absolute; right: -10px; top: -40px; font-family: var(--serif); font-style: italic; font-size: 640px; line-height: 1; color: rgba(255, 141, 114, 0.18); z-index: -1; }
+.sD6 .t-xl { font-size: 112px; text-wrap: balance; }
+
+/* 7 · Activo principal = persona */
+.sD7-left { position: absolute; left: 110px; top: 150px; width: 860px; }
+.sD7 .t-xl { font-size: 108px; }
+.sD7 .lead { font-size: 31px; max-width: 760px; }
+.sD7-rings { position: absolute; left: 1400px; top: 290px; width: 240px; height: 240px; border-radius: 50%; background: var(--grad); box-shadow: 0 0 0 80px rgba(255, 255, 255, 0.06), 0 0 0 160px rgba(255, 255, 255, 0.04), 0 0 0 240px rgba(255, 255, 255, 0.025); }
+.sD7-card { position: absolute; left: 960px; top: 620px; width: 850px; padding: 34px 44px 38px; border-radius: 40px; background: var(--grad); box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35); }
+.sD7-card .small-label { color: #ffd3c6; }
+.sD7-card p { font-family: var(--serif); font-size: 40px; line-height: 1.15; margin: 12px 0 0; }
+.sD7-card em { color: #ffe2d9; }
+
+/* 8 · Esencia humana + venn */
+.sE-left { position: absolute; left: 110px; top: 150px; width: 800px; }
+.sE .t-lg { font-size: 88px; }
+.sE .lead { font-size: 29px; max-width: 740px; }
+.sE .layers { left: 110px; top: 590px; width: 800px; }
+.sE .l3 { width: 460px; } .sE .l2 { width: 630px; } .sE .l1 { width: 800px; }
+.sE .venn { width: 500px; height: 500px; top: 150px; }
+.sE .v1 { left: 980px; padding: 0 230px 0 30px; }
+.sE .v2 { left: 1280px; padding: 0 30px 0 230px; }
+.sE .venn span { font-size: 30px; }
+.sE .vc { left: 1380px; top: 400px; width: 200px; font-size: 21px; line-height: 1.2; padding: 16px 16px; text-transform: uppercase; letter-spacing: 0.06em; }
+.sE .vs { left: 980px; top: 700px; width: 830px; flex-direction: row; gap: 20px; }
+.sE .vs .cmp { flex: 1; padding: 22px 26px; }
+.sE .vs .cmp p { font-size: 34px; }
+
+/* 9 · Esto ya es una industria (cifras) */
+.s4-top { width: 780px; }
+.s4 .t-xl { font-size: 108px; }
+.s4-top .lead { font-size: 27px; max-width: 760px; }
+.bub { width: 375px; height: 375px; padding: 30px 34px; }
+.bub b { font-size: 62px; letter-spacing: -0.02em; margin-top: 8px; }
+.bub .small-label { font-size: 15px; }
+.bub span:last-child { font-size: 19px; line-height: 1.3; margin-top: 10px; max-width: 270px; }
+.hot .small-label { color: #ffd3c6; }
+.b1 { left: 940px; top: 150px; } .b2 { left: 1380px; top: 190px; } .b3 { left: 940px; top: 575px; } .b4 { left: 1380px; top: 605px; }
+.s4 .note-row { width: 780px; bottom: 100px; }
+.s4 .note { font-size: 19px; line-height: 1.4; }
+.s4 .source { font-size: 15px; }
+
+/* 11 · Tu carrera te da herramientas */
+.sT-left { position: absolute; left: 110px; top: 150px; width: 880px; }
+.sT .t-lg { font-size: 62px; line-height: 1.04; }
+.sT .lead { font-size: 26px; margin-top: 18px; max-width: 800px; }
+.sT .chips { position: static; width: auto; margin-top: 24px; gap: 12px; }
+.sT .chips span { font-size: 22px; padding: 10px 24px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
+.sT-right { position: absolute; left: 1020px; top: 170px; width: 790px; display: flex; flex-direction: column; gap: 24px; }
+.sT .cmp p { font-size: 50px; margin: 10px 0 0; }
+.sT .cmp-new { margin-left: 0; padding: 26px 34px 28px; }
+.sT .cmp-new ol { list-style: none; margin: 12px 0 0; padding: 0; }
+.sT .cmp-new li { font-family: var(--serif); font-size: 38px; line-height: 1.15; padding: 9px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+.sT .cmp-new li:last-child { border-bottom: 0; }
+.sT .cmp-new em { color: #ffe2d9; }
+.frame-flow { position: absolute; left: 110px; top: 725px; width: 1700px; display: flex; z-index: 3; }
+.frame-flow span { flex: 1; text-align: center; padding: 18px 10px; border-radius: 30px; border: 1.5px solid rgba(244, 115, 88, 0.6); background: rgba(255, 255, 255, 0.75); font-weight: 800; letter-spacing: 0.14em; font-size: 24px; text-transform: uppercase; position: relative; margin-right: 56px; }
+.frame-flow span:last-child { margin-right: 0; }
+.frame-flow span:not(:last-child)::after { content: '→'; position: absolute; right: -44px; top: 50%; transform: translateY(-52%); color: var(--coral); font-size: 36px; letter-spacing: 0; }
+.frame-flow span.hot { background: var(--grad); color: var(--cream); border-color: transparent; box-shadow: var(--shadow); }
+.sT-quote { position: absolute; left: 110px; top: 835px; width: 1560px; margin: 0; font-size: 31px; padding: 18px 34px; }
+
+.person { width: 200px; height: 200px; }
+.person img { height: 300px; }
+.p-photo { clip-path: inset(-140px 0 0 0 round 0 0 100px 100px); }
+.sP-label { top: 360px; }
+.p-name { font-size: 18px; padding: 7px 16px; }
+.pp5 img { height: 270px; }
+.pp3 img { height: 280px; }
+.p-name { z-index: 8; }
+.sD5-orb b { font-size: 70px; max-width: 480px; }

@@ -88,58 +88,160 @@ const S1 = () => (
 )
 
 
-const S_A = () => (
-  <Frame theme="light" eyebrow="01 · UN NEGOCIO HUMANO Y EMPRESARIAL" className="sA">
-    <div className="sA-left">
-      <h1 className="t t-xl">
-        Es una industria de <em>operaciones.</em>
-      </h1>
-      <Lead>
-        Pero antes de llegar a las operaciones, quiero que entiendan algo: es un negocio donde se trabaja mucho el lado humano y el lado empresarial.
-      </Lead>
+const Person = ({ src, name, cls, style }: { src?: string; name: string; cls: string; style: CSSProperties }) => (
+  <div className={`person ${cls}`} style={style}>
+    <div className="p-photo">
+      <div className="p-disc" />
+      {src && <img src={img(src)} alt={name} />}
     </div>
-    <div className="venn v1">
-      <b>LO HUMANO</b>
-      <span>esencia · confianza · conexión</span>
-    </div>
-    <div className="venn v2">
-      <b>LO EMPRESARIAL</b>
-      <span>estrategia · negocio · operaciones</span>
-    </div>
-    <Float className="vc">Creación de contenido</Float>
-    <Remate className="sA-remate">
-      Las operaciones llegan después. Primero hay que entender los <em>dos lados.</em>
-    </Remate>
-  </Frame>
+    {!src && <span className="p-ph">FOTO<br />CYNTHIA</span>}
+    <div className="p-name">{name}</div>
+  </div>
 )
 
-const S_B = () => (
-  <Frame theme="dark" eyebrow="02 · LA ERA DE LA IA" className="sB">
-    <div className="sB-left">
-      <h1 className="t t-xl">
-        ¿Qué falta en la era de la <em>IA?</em>
+const S_P = () => (
+  <Frame theme="light" eyebrow="01 · PRESENTACIÓN" className="sP">
+    <div className="sP-left">
+      <h1 className="t t-lg">
+        Karla <em>Rodríguez.</em>
       </h1>
-      <p className="sB-answer">Justamente lo humano.</p>
-      <Lead>Por eso la creación de contenido hoy radica en esto:</Lead>
-      <div className="sB-chain">
-        <span>Autenticidad</span>
-        <i>→</i>
-        <span>Conexión</span>
-        <i>→</i>
-        <span className="hot">Crecimiento</span>
+      <p className="sP-role">Directora Estratégica de Creadores de Contenido</p>
+      <p className="sP-p">
+        Formada en Gestión Empresarial en la <b>PUCP</b>, pasó por entornos corporativos, tecnología, operaciones y negocios digitales antes de dedicarse, hace más de <b>ocho años</b>, a trabajar de cerca con creadores y marcas personales: transformar talento, autoridad y contenido en negocios más ordenados, sostenibles y escalables.
+      </p>
+      <div className="sP-card">
+        Su enfoque combina estrategia, gestión, monetización, equipos, comunidad y lectura humana. Hoy desarrolla una <b>metodología propia</b> para profesionalizar la Creator Economy en Latinoamérica.
       </div>
       <Remate>
-        Cuanto más <em>auténtico</em> eres, más conectas y creces.
+        Hoy busca instalar una conversación más empresarial: cuándo una marca personal deja de ser solo contenido y empieza a necesitar <em>estructura.</em>
       </Remate>
     </div>
-    <div className="blob" />
-    <Cut src="karla-3.png" />
+    <div className="sP-logos">
+      <div className="lg-group">
+        <span className="small-label">FORMACIÓN</span>
+        <div className="lg-row">
+          <img src={img('logo-pucp.png')} alt="PUCP" style={{ height: 46 }} />
+          <img src={img('logo-tec.png')} alt="Tecnológico de Monterrey" style={{ height: 44 }} />
+        </div>
+      </div>
+      <div className="lg-group">
+        <span className="small-label">6 AÑOS EN LOGÍSTICA</span>
+        <div className="lg-row">
+          <img src={img('logo-promart.png')} alt="Promart" style={{ height: 52 }} />
+          <span className="lg-ph">LOGO GESTNEXT</span>
+          <img src={img('logo-telefonica.png')} alt="Telefónica" style={{ height: 38 }} />
+        </div>
+      </div>
+    </div>
+    <div className="small-label sP-label">8 AÑOS EN CREACIÓN DE CONTENIDO</div>
+    <Person cls="pp1" name="Cynthia · maquilladora" style={{ left: 960, top: 500 }} />
+    <Person cls="pp2" src="daniel.png" name="Daniel Bonifaz" style={{ left: 1250, top: 490 }} />
+    <Person cls="pp3" src="wendy.png" name="Wendy Wünder" style={{ left: 1540, top: 500 }} />
+    <Person cls="pp4" src="flavio-galvez.png" name="Flavio Gálvez" style={{ left: 1105, top: 780 }} />
+    <Person cls="pp5" src="flavio-sanchez.png" name="Flavio Sánchez" style={{ left: 1450, top: 790 }} />
   </Frame>
 )
 
-const S_C = () => (
-  <Frame theme="light" eyebrow="03 · PRIMERO LA ESENCIA" className="sC">
-    <div className="sC-left">
+const S_D3 = () => (
+  <Frame theme="light" eyebrow="02 · QUÉ ES LA CREATOR ECONOMY" className="sD3">
+    <div className="sD3-left">
+      <h1 className="t t-xl">
+        ¿Qué es la <em>Creator Economy?</em>
+      </h1>
+      <Lead>
+        Es el ecosistema económico que se forma cuando una persona convierte su talento, conocimiento, audiencia o reputación en valor económico a través de medios y plataformas digitales.
+      </Lead>
+      <Remate>
+        No es simplemente “gente haciendo <em>contenido.</em>”
+      </Remate>
+    </div>
+    <div className="sD3-disc">
+      <b>VALOR</b>
+      <span>económico</span>
+    </div>
+    <Float className="f1">Talento</Float>
+    <Float className="f2">Conocimiento</Float>
+    <Float className="f3">Audiencia</Float>
+    <Float className="f4">Reputación</Float>
+  </Frame>
+)
+
+const S_D4 = () => (
+  <Frame theme="light" eyebrow="03 · NO ES LO MISMO" className="sD4">
+    <div className="sD4-left">
+      <h1 className="t t-xl">
+        Influencer marketing <em>≠</em> Creator Economy.
+      </h1>
+      <Lead>Una es una forma de monetización. La otra es todo el negocio que se construye alrededor del creador.</Lead>
+    </div>
+    <div className="ring-big">
+      <span className="small-label">CREATOR ECONOMY</span>
+      <p>Estudia cómo el creador construye un negocio alrededor de su capacidad de generar valor.</p>
+    </div>
+    <div className="ring-small">
+      <span className="small-label">INFLUENCER MARKETING</span>
+      <p>Una marca paga por acceder a la influencia o audiencia de un creador.</p>
+    </div>
+  </Frame>
+)
+
+const S_D5 = () => (
+  <Frame theme="dark" eyebrow="04 · LA INDUSTRIA" className="sD5">
+    <p className="sD5-pre">La Creator Economy es la industria que convierte</p>
+    <div className="sD5-words">
+      {['talento', 'conocimiento', 'atención', 'confianza'].map((w) => (
+        <div key={w}>
+          <i />
+          <span>{w}</span>
+        </div>
+      ))}
+    </div>
+    <div className="sD5-orb">
+      <span>en</span>
+      <b>activos económicos.</b>
+    </div>
+  </Frame>
+)
+
+const S_D6 = () => (
+  <Frame theme="dark" className="sD6" chrome={false}>
+    <div className="close-panel" />
+    <div className="blob" />
+    <Cut src="karla-2.png" />
+    <div className="close-brand">
+      <span>KARLA</span> RODRÍGUEZ
+    </div>
+    <div className="eyebrow-r">05 · EL PRINCIPIO BÁSICO</div>
+    <div className="sD6-body">
+      <span className="sD6-q">?</span>
+      <h1 className="t t-xl">
+        ¿Cuál es el <em>principio básico</em> de la Creator Economy?
+      </h1>
+    </div>
+  </Frame>
+)
+
+const S_D7 = () => (
+  <Frame theme="dark" eyebrow="06 · LO PRIMERO ES HUMANO" className="sD7">
+    <div className="sD7-left">
+      <h1 className="t t-xl">
+        El activo principal es <em>una persona.</em>
+      </h1>
+      <Lead>Antes de gestionar un negocio, tienes que entender al humano que lo sostiene.</Lead>
+    </div>
+    <div className="sD7-rings" />
+    <div className="sD7-card">
+      <span className="small-label">LA REGLA</span>
+      <p>
+        La estructura no debe reemplazar al humano. Debe permitir que su talento genere valor sin que el negocio termine <em>consumiéndolo.</em>
+      </p>
+    </div>
+  </Frame>
+)
+
+const S_E = () => (
+  <Frame theme="light" eyebrow="07 · PRIMERO LA ESENCIA" className="sE">
+    <div className="sE-left">
       <h1 className="t t-lg">
         Partimos de la esencia <em>humana.</em>
       </h1>
@@ -150,6 +252,15 @@ const S_C = () => (
       <div className="layer l2">ESTRATEGIA Y COMUNIDAD</div>
       <div className="layer l1">ESENCIA HUMANA</div>
     </div>
+    <div className="venn v1">
+      <b>LO HUMANO</b>
+      <span>esencia · confianza · conexión</span>
+    </div>
+    <div className="venn v2">
+      <b>LO EMPRESARIAL</b>
+      <span>estrategia · negocio · operaciones</span>
+    </div>
+    <Float className="vc">Marca personal como negocio</Float>
     <div className="vs">
       <div className="cmp cmp-old">
         <span className="small-label">UNA EMPRESA TRADICIONAL</span>
@@ -173,7 +284,7 @@ const territorios = [
 ]
 
 const S2 = () => (
-  <Frame theme="light" eyebrow="04 · QUIÉN ESTÁ HABLANDO" className="s2">
+  <Frame theme="light" eyebrow="09 · QUIÉN ESTÁ HABLANDO" className="s2">
     <div className="s2-left">
       <h1 className="t t-lg">
         Yo tampoco estudié <em>Creator Economy.</em>
@@ -203,72 +314,88 @@ const S2 = () => (
 )
 
 const S3 = () => (
-  <Frame theme="light" eyebrow="05 · UNA MEJOR PREGUNTA" className="s3">
-    <div className="s3-left">
-      <h1 className="t t-xl">
-        Tu carrera te da <em>herramientas.</em>
+  <Frame theme="light" eyebrow="10 · UNA MEJOR PREGUNTA" className="sT">
+    <div className="sT-left">
+      <h1 className="t t-lg">
+        Tu carrera no define dónde vas a terminar. <em>Te da herramientas para resolver problemas.</em>
       </h1>
-      <Lead>No siempre te dice dónde vas a terminar aplicándolas.</Lead>
+      <Lead>La oportunidad aparece cuando conectas lo que sabes hacer con un problema que alguien necesita resolver.</Lead>
+      <div className="chips">
+        {['Analizar', 'ordenar', 'comunicar', 'vender', 'conectar', 'ejecutar'].map((c) => (
+          <span key={c}>{c}</span>
+        ))}
+      </div>
     </div>
-    <div className="chips">
-      {['Entender personas', 'vender', 'ordenar', 'conectar', 'comunicar', 'convertir ideas en proyectos'].map((c) => (
-        <span key={c}>{c}</span>
-      ))}
-    </div>
-    <div className="compare">
+    <div className="sT-right">
       <div className="cmp cmp-old">
-        <span className="small-label">LA PREGUNTA TRADICIONAL</span>
+        <span className="small-label">EN VEZ DE PREGUNTARTE</span>
         <p>¿Qué cargo quiero?</p>
       </div>
       <div className="cmp cmp-new">
-        <span className="small-label">LA PREGUNTA QUE ABRE POSIBILIDADES</span>
-        <p>
-          ¿Qué <em>problemas</em> disfruto resolver?
-        </p>
+        <span className="small-label">PREGÚNTATE</span>
+        <ol>
+          <li>
+            ¿Qué <em>problema</em> sé resolver?
+          </li>
+          <li>¿Para quién ese problema es importante?</li>
+          <li>¿En qué industria esa habilidad tiene valor?</li>
+        </ol>
       </div>
     </div>
+    <div className="frame-flow">
+      {['Habilidad', 'Problema', 'Industria', 'Oportunidad'].map((x, i) => (
+        <span key={x} className={i === 3 ? 'hot' : ''}>
+          {x}
+        </span>
+      ))}
+    </div>
+    <Remate className="sT-quote">
+      “Mi carrera no me dio el nombre de mi puesto; me dio las herramientas con las que después <em>construí</em> ese puesto.”
+    </Remate>
   </Frame>
 )
 
 const S4 = () => (
-  <Frame theme="dark" eyebrow="06 · LA OPORTUNIDAD YA EXISTE" className="s4">
+  <Frame theme="dark" eyebrow="08 · LA OPORTUNIDAD YA EXISTE" className="s4">
     <div className="s4-top">
       <h1 className="t t-xl">
         Esto ya es una <em>industria.</em>
       </h1>
       <Lead>
-        La atención, las marcas y el dinero ya se están moviendo hacia este ecosistema. Por eso aparecen nuevas funciones profesionales.
+        La Creator Economy dejó de ser un fenómeno de redes para convertirse en una industria. Se estima que el mercado global pasaría de US$250 mil millones a US$480 mil millones entre 2023 y 2027.
       </Lead>
     </div>
-    <div className="small-label stat-label sl1">PERÚ · PUBLICIDAD 2025</div>
     <div className="bub b1">
-      <b>53%</b>
-      <span>de toda la inversión publicitaria ya fue digital.</span>
+      <span className="small-label">MUNDO · 2027</span>
+      <b>US$480B</b>
+      <span>mercado potencial de la Creator Economy.</span>
     </div>
     <div className="bub b2">
-      <b>45%</b>
-      <span>de la inversión digital fue Social Ads.</span>
+      <span className="small-label">EE. UU. · 2025</span>
+      <b>US$37.1B</b>
+      <span>invertidos directamente en publicidad con creadores.</span>
     </div>
-    <div className="small-label stat-label sl2">BRASIL · ECOSISTEMA YOUTUBE 2025</div>
     <div className="bub hot b3">
-      <b>+R$6B</b>
-      <span>de contribución al PIB.</span>
+      <span className="small-label">ESPAÑA · 2025</span>
+      <b>≈ US$179M</b>
+      <span>invertidos en influencers. +100% vs. 2023.</span>
     </div>
     <div className="bub hot b4">
-      <b>+150K</b>
-      <span>empleos equivalentes a tiempo completo.</span>
+      <span className="small-label">PERÚ · 2025</span>
+      <b>≈ US$147M</b>
+      <span>invertidos en Social Ads (US$326M en publicidad digital total).</span>
     </div>
     <div className="note-row">
       <p className="note">
-        No significa que todos esos empleos sean “managers de creadores”. Sí demuestra que el ecosistema ya mueve economía, empresas y trabajo.
+        Perú todavía no cuenta con una medición pública del tamaño total de su Creator Economy. La inversión digital y social funciona aquí como indicador de hacia dónde se están desplazando la atención y los presupuestos.
       </p>
-      <p className="source">Fuente: IAB Perú + PwC (2026) · YouTube / Oxford Economics (2026)</p>
+      <p className="source">Fuentes: Goldman Sachs · IAB Spain · IAB Perú + PwC</p>
     </div>
   </Frame>
 )
 
 const S5 = () => (
-  <Frame theme="light" eyebrow="07 · AMPLIAR EL MAPA" className="s5">
+  <Frame theme="light" eyebrow="11 · AMPLIAR EL MAPA" className="s5">
     <div className="s5-left">
       <h1 className="t t-lg">
         Trabajar en contenido no significa ser <em>creador.</em>
@@ -315,7 +442,7 @@ const pasos = [
 ]
 
 const S6 = () => (
-  <Frame theme="dark" eyebrow="08 · LA SLIDE MADRE" className="s6">
+  <Frame theme="dark" eyebrow="12 · LA SLIDE MADRE" className="s6">
     <div className="head">
       <h1 className="t t-xl">
         El sistema detrás del <em>talento.</em>
@@ -343,7 +470,7 @@ const roles = [
 ]
 
 const S7 = () => (
-  <Frame theme="light" eyebrow="09 · ANTES DE PUBLICAR">
+  <Frame theme="light" eyebrow="13 · ANTES DE PUBLICAR">
     <div className="s7">
       <div className="s7-left">
         <h1 className="t t-lg">
@@ -375,7 +502,7 @@ const preguntas = [
 ]
 
 const S8 = () => (
-  <Frame theme="light" eyebrow="10 · DIRIGIR CONTENIDO">
+  <Frame theme="light" eyebrow="14 · DIRIGIR CONTENIDO">
     <div className="s8">
       <div className="s8-left">
         <h1 className="t t-md">
@@ -407,7 +534,7 @@ const S8 = () => (
 )
 
 const S9 = () => (
-  <Frame theme="dark" eyebrow="11 · COMUNIDAD" className="s9">
+  <Frame theme="dark" eyebrow="15 · COMUNIDAD" className="s9">
     <div className="head">
       <h1 className="t t-lg">
         La comunicación no termina cuando <em>publicas.</em>
@@ -435,7 +562,7 @@ const S9 = () => (
 )
 
 const S10 = () => (
-  <Frame theme="light" eyebrow="12 · SINERGIAS">
+  <Frame theme="light" eyebrow="16 · SINERGIAS">
     <div className="s10">
       <div className="s10-left">
         <h1 className="t t-lg">
@@ -469,7 +596,7 @@ const S10 = () => (
 )
 
 const S11 = () => (
-  <Frame theme="dark" eyebrow="13 · EL TRABAJO INVISIBLE" className="s11">
+  <Frame theme="dark" eyebrow="17 · EL TRABAJO INVISIBLE" className="s11">
     <div className="s11-left">
       <h1 className="t t-xl">
         Management &amp; <em>operaciones.</em>
@@ -498,7 +625,7 @@ const cats = [
 ]
 
 const S12 = () => (
-  <Frame theme="light" eyebrow="14 · MONETIZACIÓN" className="s12">
+  <Frame theme="light" eyebrow="18 · MONETIZACIÓN" className="s12">
     <div className="head">
       <h1 className="t t-xl">
         ¿Dónde aparece el <em>negocio?</em>
@@ -523,7 +650,7 @@ const S12 = () => (
 )
 
 const S13 = () => (
-  <Frame theme="light" eyebrow="15 · CASO APLICADO" className="s13">
+  <Frame theme="light" eyebrow="19 · CASO APLICADO" className="s13">
     <div className="blob" />
     <Cut src="daniel.png" />
     <Float className="d1">Daniel Bonifaz</Float>
@@ -574,7 +701,7 @@ const entradas = [
 ]
 
 const S14 = () => (
-  <Frame theme="light" eyebrow="16 · TU ENTRADA A LA INDUSTRIA" className="s14">
+  <Frame theme="light" eyebrow="20 · TU ENTRADA A LA INDUSTRIA" className="s14">
     <div className="s14-left">
       <h1 className="t t-xl">
         ¿Dónde podrías entrar <em>tú?</em>
@@ -653,4 +780,4 @@ const S20 = () => (
   </Frame>
 )
 
-export const SLIDES: (() => ReactNode)[] = [S1, S_A, S_B, S_C, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S20]
+export const SLIDES: (() => ReactNode)[] = [S1, S_P, S_D3, S_D4, S_D5, S_D6, S_D7, S_E, S4, S2, S3, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S20]
